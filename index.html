@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #555;
+      background: #fafafa;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 10%;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav strong {
+      color: black;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #444;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    h1 {
+      color: #111;
+      font-size: 55px;
+    }
+
+    h1 span {
+      color: #176b9a;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+      padding: 13px 22px;
+      color: #176b9a;
+      background: #edf7fc;
+      border: 1px solid #9bc6dc;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    section {
+      margin-top: 80px;
+    }
+
+    @media (max-width: 700px) {
+      nav div {
+        display: none;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <strong>Your Name</strong>
+
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about">
+      <p>AI ENGINEER & RESEARCHER</p>
+      <h1>Your <span>Name</span></h1>
+      <h2>AI Engineer and Researcher</h2>
+
+      <a class="button" href="#projects">View Projects</a>
+      <a class="button" href="#contact">Contact Me</a>
+
+      <p>
+        Write a short introduction about your education, experience,
+        research interests, and career goals here.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>Project 1 — Write a short description.</p>
+      <p>Project 2 — Write a short description.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>Python, Machine Learning, Data Analysis, HTML and CSS</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your-email@example.com</p>
+    </section>
+  </main>
+</body>
+</html>
