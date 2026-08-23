@@ -1,314 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hasan Jehangir – Academic Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic portfolio of Daud Khan, Marie Skłodowska-Curie Fellow and PhD researcher working on 5G/6G, NR-V2X, autonomous driving and intelligent wireless systems.">
+  <title>Daud Khan | Academic Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0b3d91;
+      --primary-dark: #08296f;
+      --accent: #d3422f;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #edf2f8;
+      --text: #202632;
+      --muted: #5c6677;
+      --border: #dce3ed;
+      --shadow: 0 10px 28px rgba(31, 43, 68, 0.08);
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    transition: background 0.3s, color 0.3s;
-    background: #fafafa;
-    color: #222;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 78px; }
 
-/* DARK MODE */
-body.dark { background: #0d1117; color: #e6edf3; }
-body.dark .section { background: #161b22; border: 1px solid #30363d; }
-body.dark nav { background: #0d1117; }
-body.dark nav a:hover { background: #30363d; }
-body.dark header { background: linear-gradient(135deg, #1f1f1f, #2a2a2a); color: #e6edf3; }
-body.dark .footer { background: #0d1117; color: #e6edf3; }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .3s, color .3s;
+    }
 
-/* HEADER */
-header {
-    text-align: center;
-    background: #fafafa; 
-    color: #111;
-    padding: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    body.dark {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-soft: #1d2330;
+      --text: #e6edf3;
+      --muted: #aeb8c5;
+      --border: #30363d;
+      --shadow: 0 10px 28px rgba(0, 0, 0, .28);
+    }
 
-.profile-pic {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 4px solid #ccc;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
+    a { color: var(--primary); }
+    img { max-width: 100%; }
 
-/* CV Buttons */
-.btn {
-    padding: 10px 20px;
-    background: #0b3d91;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    display: inline-block;
-    margin: 8px 5px;
-    transition: 0.3s;
-}
-.btn:hover { background: #08296f; }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      z-index: 2000;
+      padding: 10px 14px;
+      background: var(--surface);
+      color: var(--text);
+    }
+    .skip-link:focus { left: 8px; }
 
-/* Social Icons */
-.social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #0b3d91;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.social-icons a:hover { color: #08296f; }
+    header {
+      padding: 70px 24px 60px;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(255,255,255,.18), transparent 25%),
+        linear-gradient(135deg, #eff4fb 0%, #ffffff 55%, #f7e7e3 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    body.dark header { background: linear-gradient(135deg, #111827, #1f2937); }
 
-/* NAVIGATION */
-nav {
-    text-align: center;
-    background: #111;
-    padding: 12px 0;
-}
-nav a {
-    color: #fafafa;
-    padding: 10px 18px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-nav a:hover { background: #1f1f1f; border-radius: 5px; }
+    .hero {
+      width: min(1050px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      align-items: center;
+      gap: 42px;
+    }
 
-/* SECTIONS */
-.section {
-    max-width: 1050px;
-    margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 12px;
-    margin-top: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-h2 {
-    border-left: 6px solid #0b3d91;
-    padding-left: 12px;
-    margin-bottom: 20px;
-    color: #111;
-}
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 18px;
+      border: 4px solid rgba(11, 61, 145, .2);
+      object-fit: cover;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
 
-/* PROJECT IMAGES */
-.project-img {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    border-radius: 10px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border: 1px solid #ccc;
-}
-.project-img:hover { transform: scale(1.03); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 8px;
+      padding: 6px 12px;
+      color: var(--primary);
+      background: rgba(11, 61, 145, .09);
+      border: 1px solid rgba(11, 61, 145, .18);
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
 
-/* CARD */
-.card {
-    background: #ececec;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border-left: 6px solid #8d8d8d;
-}
-body.dark .card { background: #1d2330; border-left: 6px solid #58a6ff; }
+    h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.1; }
+    .subtitle { margin: 12px 0; color: var(--muted); font-size: 1.08rem; }
+    .contact-line { margin: 6px 0; color: var(--muted); }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    background: #111;
-    color: #fafafa;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 14px;
-}
+    .social-icons, .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .social-icons a { font-weight: 600; text-decoration: none; }
 
-/* DARK MODE BUTTON */
-.toggle-btn {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    background: #222;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 999;
-}
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      color: #fff;
+      background: var(--primary);
+      border: 0;
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn.secondary { color: var(--primary); background: transparent; border: 1px solid var(--primary); }
 
-/* IMAGE MODAL */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 900px;
-}
-.modal-content, #caption { animation-name: zoom; animation-duration: 0.3s; }
-@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
-.close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
-</style>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+      padding: 10px 62px 10px 14px;
+      overflow-x: auto;
+      background: #111827;
+      box-shadow: 0 4px 18px rgba(0,0,0,.16);
+    }
+    nav a {
+      flex: 0 0 auto;
+      padding: 9px 13px;
+      color: #f8fafc;
+      border-radius: 6px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    nav a:hover, nav a:focus { background: #334155; }
+
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      right: 14px;
+      z-index: 999;
+      width: 42px;
+      height: 42px;
+      color: #fff;
+      background: #263348;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    main { padding: 4px 20px 40px; }
+    .section {
+      width: min(1050px, 100%);
+      margin: 28px auto 0;
+      padding: 34px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      padding-left: 13px;
+      color: var(--text);
+      border-left: 6px solid var(--primary);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+    }
+    h3 { margin-bottom: 6px; line-height: 1.35; }
+    .lead { color: var(--muted); font-size: 1.03rem; }
+    .muted { color: var(--muted); }
+
+    .interest-grid, .project-grid, .publication-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      padding: 20px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+    }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .date { color: var(--accent); font-weight: 600; }
+    .tag {
+      display: inline-block;
+      margin: 4px 5px 0 0;
+      padding: 4px 9px;
+      color: var(--primary);
+      background: rgba(11, 61, 145, .09);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .publication { margin: 0; }
+    .publication + .publication { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .publication strong { color: var(--text); }
+    .status { color: #16803c; font-weight: 600; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .gallery figure { margin: 0; }
+    .gallery figure.wide { grid-column: 1 / -1; }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform .25s;
+    }
+    .gallery figure.wide img { height: 360px; }
+    .gallery img:hover { transform: scale(1.015); }
+    figcaption { margin-top: 7px; color: var(--muted); font-size: .86rem; text-align: center; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      padding: 60px 20px 20px;
+      background: rgba(0,0,0,.92);
+    }
+    .modal-content { display: block; width: auto; max-width: 92%; max-height: 85vh; margin: auto; }
+    .close { position: absolute; top: 10px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
+
+    .footer { padding: 24px; color: #d9e1ec; background: #111827; text-align: center; }
+
+    @media (max-width: 760px) {
+      header { padding-top: 64px; }
+      .hero { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+      .profile-pic { margin: auto; }
+      .social-icons, .hero-actions { justify-content: center; }
+      nav { justify-content: flex-start; }
+      .section { padding: 24px 20px; }
+      .interest-grid, .project-grid, .publication-grid, .gallery { grid-template-columns: 1fr; }
+      .gallery figure.wide { grid-column: auto; }
+      .gallery img, .gallery figure.wide img { height: auto; max-height: 480px; }
+    }
+  </style>
 </head>
 
 <body>
-<!-- DARK MODE BUTTON -->
-<div class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark / ☀️ Light</div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <button class="toggle-btn" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Dark / light mode">🌙</button>
 
-<header>
-    <img src="profile.jpeg" class="profile-pic" alt="Profile">
-    <h1>Hasan Jehangir</h1>
-    <p>AI Researcher • ML/DL Engineer • Computer Vision • Healthcare AI • Computational Neuroscience</p>
-    <div class="social-icons">
-        <a href="https://github.com/hasanJehangir">GitHub</a>
-        <a href="https://www.linkedin.com/in/hasan-j-397933232/">LinkedIn</a>
-        <a href="mailto:hasanjehangir6@gmail.com">Email</a>
+  <header id="home">
+    <div class="hero">
+      <!-- Upload your portrait to GitHub with this exact filename. -->
+      <img src="profile.jpeg" class="profile-pic" alt="Portrait of Daud Khan">
+      <div>
+        <p class="eyebrow">Marie Skłodowska-Curie Fellow · PhD Researcher</p>
+        <h1>Daud Khan</h1>
+        <p class="subtitle">5G/6G · NR-V2X · Autonomous Driving · Intelligent Wireless Systems</p>
+        <p class="contact-line"><strong>Email:</strong> <a href="mailto:DaudKhanmrz@gmail.com">DaudKhanmrz@gmail.com</a> · <a href="mailto:Daudkhan@inha.edu">Daudkhan@inha.edu</a></p>
+        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+821030233188">+82 10-3023-3188</a></p>
+        <div class="social-icons">
+          <!-- Replace # with your exact profile links. -->
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="hero-actions">
+          <!-- Upload your CV with this exact filename, or change the path below. -->
+          <a class="btn" href="Daud_Khan_CV.pdf" target="_blank">Open CV</a>
+          <a class="btn secondary" href="Daud_Khan_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
     </div>
-    <br>
-    <!-- CV Buttons -->
-    <a class="btn" href="Hasan_Jehangir's_CV.pdf" target="_blank">📄 Open Academic CV</a>
-    <a class="btn" href="Hasan_Jehangir's_CV.pdf" download>📄 Download Academic CV</a>
-    <a class="btn" href="Hasan's CV.pdf" target="_blank">📄 Open Job CV</a>
-    <a class="btn" href="Hasan's CV.pdf" download>📄 Download Job CV</a>
-</header>
+  </header>
 
-<nav>
+  <nav aria-label="Main navigation">
     <a href="#about">About</a>
+    <a href="#interests">Interests</a>
     <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
-    <a href="#skills">Skills</a>
+    <a href="#patent">Patent</a>
+    <a href="#activities">Activities</a>
     <a href="#contact">Contact</a>
-</nav>
+  </nav>
 
-<!-- Sections (About, Research, Experience, Projects, Publications, Skills, Contact) -->
-<div class="section" id="about">
-    <h2>About Me</h2>
-    <p>Passionate AI and Deep Learning researcher focusing on healthcare AI, biomedical signal processing,
-    computational neuroscience, computer vision, and multimodal architectures. Only Pakistani Finalist in Microsoft Student Ambassadors AI Competition.</p>
-</div>
+  <main id="main-content">
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p class="lead">Daud Khan is a Marie Skłodowska-Curie Fellow at Instituto de Telecomunicações and a PhD candidate in Electrical Engineering at the University of Aveiro, Portugal. His current research focuses on radio-stripe-enabled cell-free massive MIMO systems designed to provide wide-area coverage and reliable connectivity in high-mobility environments.</p>
+      <p>Previously, he served as a Graduate Research Assistant at Inha University, South Korea, where he earned his Master’s degree in Electrical and Computer Engineering. During his studies, he received the BK21 (Brain Korea 21) Scholarship from the Government of South Korea and the Jungseok International Scholarship from Inha University. He holds a Bachelor’s degree in Electrical Communication Engineering from the University of Engineering and Technology (UET) Peshawar, Pakistan.</p>
+      <p>He has authored and co-authored several SCI-indexed journal articles and conference papers and contributed to patented technologies in autonomous driving and wireless communications. He has also participated in Korean government-funded research projects and serves as a peer reviewer for <em>IEEE Access</em>.</p>
+    </section>
 
-<div class="section" id="research">
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Artificial Intelligence for Healthcare</li>
-        <li>Computational Neuroscience</li>
-        <li>Brain–Computer Interfaces</li>
-        <li>Multimodal Deep Learning</li>
-        <li>Computer Vision & Image Processing</li>
-        <li>NLP, LLMs, RAG Architectures</li>
-    </ul>
-</div>
+    <section class="section" id="interests">
+      <h2>Research Interests</h2>
+      <div class="interest-grid">
+        <div class="card">5G/6G wireless communications and NR-V2X systems for autonomous driving</div>
+        <div class="card">Radio-stripe-enabled cell-free massive MIMO systems</div>
+        <div class="card">AI and deep reinforcement learning for intelligent networked systems</div>
+        <div class="card">Vehicular networks and mobility and handover optimization</div>
+        <div class="card">UAV and non-terrestrial network communications</div>
+        <div class="card">Communication networks for renewable energy integration and smart-grid systems</div>
+      </div>
+    </section>
 
-<div class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-        <h3>Machine Learning Researcher – NCAI AI in Healthcare Lab</h3>
-        <p><b>20/04/2024 – 31/05/2024</b></p>
-        <ul><li>Sound analysis of human body</li><li>Lung sound-based disease detection</li></ul>
-    </div>
-    <div class="card">
-        <h3>GenAI Instructor – Wrapify Labs</h3>
-        <p><b>01/10/2025 – Present</b></p>
-        <ul><li>Taught LLMs, RAG, prompt engineering</li></ul>
-    </div>
-    <div class="card">
-        <h3>Deep Learning Instructor – TCPC Community</h3>
-        <p><b>25/09/2024 – 10/10/2024</b></p>
-        <ul><li>Taught CNN, RNN, GRU, Transformers</li></ul>
-    </div>
-</div>
+    <section class="section" id="research">
+      <h2>Research Projects</h2>
+      <div class="project-grid">
+        <article class="card">
+          <h3>5G-NR-V2X for Level 4 Autonomous Driving</h3>
+          <p>Development of 5G-NR-V2X communication technology to support Level 4 autonomous-driving services.</p>
+          <p class="date">March 2024 – 2026</p>
+          <p class="muted">MSIT Grant · Project No. 2022-0-00521 · Supported by IITP, Korea</p>
+        </article>
+        <article class="card">
+          <h3>Ultra-High-Speed V2X Autonomous Driving Services</h3>
+          <p>Development of ultra-high-speed V2X communication-based autonomous-driving service technologies.</p>
+          <p class="date">March 2024 – February 2025</p>
+          <p class="muted">MSIT Grant · Project No. 2021-0-01140 · Supported by IITP, Korea</p>
+        </article>
+        <article class="card">
+          <h3>3D Space Mobile Communication Technology</h3>
+          <p>Development of three-dimensional space mobile communication technology.</p>
+          <p class="date">March 2024 – 2026</p>
+          <p class="muted">MSIT Grant · Project No. 2021-0-00794 · Supported by IITP, Korea</p>
+        </article>
+      </div>
+    </section>
 
-<div class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <h3>NeuroShield – Multimodal Wearable for Seizure Detection</h3>
-        <img src="neuroshield.png" class="project-img" onclick="openModal(this.src)">
-        <p>Real-time tonic-clonic seizure detection using ChronoNet + EMG + PPG + MPU9250 with GPS alerts.</p>
-        <a class="btn" href="https://github.com/NeuroShield-A-Wearable-device/Neuroshield">GitHub Repo</a>
-    </div>
-    <div class="card">
-        <h3>RespiraSense – Lung Disease Detection (CNN + MFCC)</h3>
-        <img src="net.png" class="project-img" onclick="openModal(this.src)">
-        <p>CNN classifier for respiratory disease prediction using MFCC + Chroma.</p>
-        <a class="btn" href="https://github.com/hasanJehangir/RespiraSense">GitHub Repo</a>
-    </div>
-    <div class="card">
-        <h3>MelanoGuard – Melanoma Detector (Azure)</h3>
-        <img src="interface.png" class="project-img" onclick="openModal(this.src)">
-        <p>Skin cancer detection model with 94% accuracy.</p>
-        <a class="btn" href="https://github.com/hasanJehangir/MelanoGuard">GitHub Repo</a>
-    </div>
-    <div class="card">
-        <h3>Sautt-ul-Haq – RAG System on Islamic Texts</h3>
-        <img src="chatbot.jfif" class="project-img" onclick="openModal(this.src)">
-        <p>RAG system trained on Quran, Ahadith, Tafseer.</p>
-        <a class="btn" href="https://github.com/hasanJehangir/Saut-ul-Haqq">GitHub Repo</a>
-    </div>
-</div>
+    <section class="section" id="publications">
+      <h2>Publications</h2>
 
-<div class="section" id="publications">
-    <h2>Publications</h2>
-    <div class="card">
-        <h3>Exploring Body Sound Analysis for AI/ML</h3>
-        <p>Article discussing how human body sounds can be used for ML and healthcare signals.</p>
-        <a class="btn" href="https://medium.com/@hasanjehangir6/exploring-body-sound-analysis-for-ai-ml-a71145bdc8eb">Read Article</a>
-    </div>
-    <div class="card"><h3>NeuroShield Research Paper (Under Review)</h3><p>PeerJ Journal</p></div>
-    <div class="card"><h3>Patent (In Process)</h3><p>NeuroShield wearable technology</p></div>
-</div>
+      <h3>Published Journal Articles</h3>
+      <div class="publication-grid">
+        <div class="card">
+          <p class="publication"><strong>Achieving Level 4 Autonomy in Urban Intersections through EKF-Based Multi-Modal Fusion Enhanced by Dual-Attention PPO.</strong><br>Daud Khan, S. Aslam, S. Mondal, and K. H. Chang. <em>Robotics and Autonomous Systems</em>, September 2025. <span class="tag">IF: 6.0</span></p>
+          <p class="publication"><strong>Vehicle-to-Infrastructure Multi-Sensor Fusion (V2I-MSF) with Reinforcement Learning Framework for Enhancing Autonomous Vehicle Perception.</strong><br>Daud Khan, S. Aslam, and K. H. Chang. <em>IEEE Access</em>, vol. 13, pp. 50122–50136, March 2025. <span class="tag">IF: 4.2</span></p>
+          <p class="publication"><strong>TPU-Assisted V2X Message Fusion via PC5 and Uu with Actor-Critic Modeling for Autonomous Driving under Intersection Scenario.</strong><br>S. Aslam, Daud Khan, S. Mondal, and K. H. Chang. <em>Vehicular Communications</em>, September 2025. <span class="tag">IF: 5.7</span></p>
+        </div>
+        <div class="card">
+          <p class="publication"><strong>The Shared Experience Actor-Critic (SEAC) Approach for Allocating Radio Resources and Mitigating Resource Collisions in 5G-NR-V2X Mode 2 under Aperiodic Traffic Conditions.</strong><br>S. Aslam, Daud Khan, and K. H. Chang. <em>Sensors</em>, vol. 24, pp. 1–22, October 2024. <span class="tag">IF: 4.0</span></p>
+          <p class="publication"><strong>Intelligent Handover Orchestration in Beyond-5G and Urban V2X Dual Connectivity Networks: A Deep Reinforcement Learning Approach.</strong><br>S. Mondal, S. Aslam, Daud Khan, and K. H. Chang. <em>IEEE Access</em>, vol. 13, pp. 196509–196525, December 2025. <span class="tag">IF: 4.2</span></p>
+        </div>
+      </div>
 
-<div class="section" id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Deep Learning – CNN, RNN, LSTM, GRU, Transformers</li>
-        <li>NLP, RAG, Prompt Engineering</li>
-        <li>Python, HTML, CSS, C++, Java</li>
-        <li>Electronics – IoT, EMG, EEG, Arduino</li>
-        <li>Azure Cloud, Azure Custom Vision</li>
-    </ul>
-</div>
+      <h3>Under Review</h3>
+      <div class="card">
+        <p class="publication"><strong>AI-Enabled Cross-Layer Design and Optimization of LEO-Based NonTerrestrial–Terrestrial Networks: Challenges, Trends, and Future Directions.</strong><br>Daud Khan, A. Rehman, AB Samim, and K. H. Chang. <em>IEEE Transactions on Network and Service Management</em>. <span class="status">Under preparation</span> <span class="tag">IF: 5.4</span></p>
+        <p class="publication"><strong>Network-Centric V2X Architecture for Cooperative Autonomous Driving: Routing Design and Protocol-Level Performance Evaluation.</strong><br>S. Siddique, S. Mondal, Daud Khan, and K. H. Chang. <em>Vehicular Communications</em>. <span class="status">Under preparation</span> <span class="tag">IF: 6.5</span></p>
+      </div>
 
-<div class="section" id="contact">
-    <h2>Contact</h2>
-    <p><b>Email:</b> hasanjehangir6@gmail.com</p>
-    <p><b>Phone:</b> +92 349 926 2254</p>
-    <p><b>Address:</b> Swabi, Pakistan</p>
-</div>
+      <h3>Conference Publications &amp; Presentations</h3>
+      <div class="card">
+        <p class="publication"><strong>Evolution in 5G NR V2X Technology – A Detailed Look at Enhancements in 3GPP Releases 17 and 18.</strong><br>Daud Khan, S. Aslam, and K. H. Chang. KICS Summer Conference, pp. 990–991, June 2024.</p>
+        <p class="publication"><strong>Enhancing Autonomous Driving Reliability through DIT Strategy for Adaptive Resource Re-Evaluation Mechanism.</strong><br>S. Mondal, Daud Khan, S. Aslam, and K. H. Chang. KICS Winter Conference, pp. 714–715, February 2025.</p>
+        <p class="publication"><strong>Beyond line-of-sight: V2X-enabled occlusion-aware lane change decisions.</strong><br>S. Siddique, S. Mondal, Daud Khan, and K. H. Chang. Proceedings of CTCN, Japan, December 2025, pp. 50–51.</p>
+        <p class="publication"><strong>Design Methodology of On-Grid Solar PV Powered System for University Campuses.</strong><br>Daud Khan, R. Haid, M. Farhan, A. Aziz, and K. Ur Rehman. 4th International Conference on Sustainable Energy Technologies (ICSET 2022), Peshawar, Pakistan, pp. 141–150, December 2022.</p>
+      </div>
+    </section>
 
-<div class="footer">© 2025 Hasan Jehangir – Academic Portfolio</div>
+    <section class="section" id="patent">
+      <h2>Patent</h2>
+      <div class="card">
+        <h3>Apparatus and Method for Achieving Autonomous Driving in Urban Intersections through Extended Kalman Filter-Based Multi-Modal Fusion in Wireless Communication System</h3>
+        <p>Kyung-H Chang, Daud Khan, and Sawera Aslam. Inha University Industry-Academic Cooperation Foundation.</p>
+        <p><strong>Patent No. 10-2025-0109582</strong> · <span class="status">Filed August 8, 2025</span></p>
+      </div>
+    </section>
 
-<!-- IMAGE MODAL -->
-<div id="imgModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
-</div>
+    <section class="section" id="activities">
+      <h2>Activities</h2>
+      <p class="lead">Academic milestones and graduation activities at Inha University.</p>
+      <div class="gallery">
+        <!-- Upload your activity photos using these filenames. -->
+        <figure><img src="activity-1.jpg" alt="Daud Khan at his graduation ceremony" onclick="openModal(this.src, this.alt)"><figcaption>Graduation ceremony</figcaption></figure>
+        <figure><img src="activity-2.jpg" alt="Daud Khan receiving his graduation certificate" onclick="openModal(this.src, this.alt)"><figcaption>Academic achievement</figcaption></figure>
+        <figure><img src="activity-3.jpg" alt="Daud Khan with a fellow graduate" onclick="openModal(this.src, this.alt)"><figcaption>Graduation celebration</figcaption></figure>
+        <figure class="wide"><img src="activity-4.jpg" alt="Graduate researchers and faculty at Inha University" onclick="openModal(this.src, this.alt)"><figcaption>Graduate researchers and faculty</figcaption></figure>
+      </div>
+    </section>
 
-<script>
-function toggleDarkMode() { document.body.classList.toggle("dark"); }
-function openModal(src) { document.getElementById('modalImg').src = src; document.getElementById('imgModal').style.display='block'; }
-function closeModal() { document.getElementById('imgModal').style.display='none'; }
-</script>
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:DaudKhanmrz@gmail.com">DaudKhanmrz@gmail.com</a></p>
+      <p><strong>University email:</strong> <a href="mailto:Daudkhan@inha.edu">Daudkhan@inha.edu</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+821030233188">+82 10-3023-3188</a></p>
+      <p class="muted">For research collaboration, academic opportunities, or questions about my work, please contact me by email.</p>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Daud Khan · Academic Portfolio</footer>
+
+  <div id="imgModal" class="modal" role="dialog" aria-modal="true" aria-label="Expanded activity image" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)" aria-label="Close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="">
+  </div>
+
+  <script>
+    const themeButton = document.querySelector('.toggle-btn');
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      themeButton.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      themeButton.textContent = '☀️';
+    }
+
+    function openModal(src, alt) {
+      const modal = document.getElementById('imgModal');
+      const image = document.getElementById('modalImg');
+      image.src = src;
+      image.alt = alt || 'Expanded image';
+      modal.style.display = 'block';
+    }
+
+    function closeModal(event) {
+      if (!event || event.target.id === 'imgModal' || event.target.classList.contains('close')) {
+        document.getElementById('imgModal').style.display = 'none';
+      }
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') document.getElementById('imgModal').style.display = 'none';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
