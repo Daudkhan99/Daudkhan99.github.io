@@ -222,7 +222,7 @@
       gap: 14px;
     }
     .gallery figure { margin: 0; }
-    .gallery figure.wide { grid-column: 1 / -1; }
+    .gallery figure.wide { grid-column: span 2; }
     .gallery img {
       width: 100%;
       height: 260px;
@@ -232,7 +232,7 @@
       cursor: pointer;
       transition: transform .25s;
     }
-    .gallery figure.wide img { height: 360px; }
+    .gallery figure.wide img { height: 300px; }
     .gallery img:hover { transform: scale(1.015); }
     figcaption { margin-top: 7px; color: var(--muted); font-size: .86rem; text-align: center; }
 
@@ -274,9 +274,8 @@
       <div>
         <p class="eyebrow">Marie Skłodowska-Curie Fellow · Graduate Researcher</p>
         <h1>Daud Khan</h1>
-        <p class="subtitle">5G/6G · NR-V2X · Autonomous Driving · Intelligent Wireless Systems</p>
+        <p class="subtitle">Radio Stripes · Cell-Free Massive MIMO · 5G/6G · NR-V2X · High-Mobility Communications</p>
         <p class="contact-line"><strong>Email:</strong> <a href="mailto:daudkhanmrz@gmail.com">daudkhanmrz@gmail.com</a></p>
-        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+923427888027">+92 342 788 8027</a></p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/daud-khan9478/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://scholar.google.com/citations?user=1zD6lTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -306,7 +305,7 @@
   <main id="main-content">
     <section class="section" id="about">
       <h2>About Me</h2>
-      <p class="lead">Daud Khan is a Marie Skłodowska-Curie Fellow on the ANCHOR project (Advanced Network Connectivity Using Harmonious Optical and Radio Technologies) at Instituto de Telecomunicações. He is a graduate researcher in Electrical and Computer Engineering specializing in autonomous driving, cooperative perception, and intelligent wireless communication systems.</p>
+      <p class="lead">Daud Khan is a Marie Skłodowska-Curie Fellow on the ANCHOR project (Advanced Network Connectivity Using Harmonious Optical and Radio Technologies) at Instituto de Telecomunicações. His PhD research focuses on Radio Stripes (RS)-underpinned cell-free (CF) massive MIMO systems for large coverage and high-mobility environments.</p>
       <p>He served as a Graduate Research Assistant at the Mobile Telecommunication Research Lab, Inha University, South Korea, and previously worked in the Digital Signal Processing Lab at UET Peshawar. His research spans Level 4 autonomy, V2X Uu/PC5 interfaces, mobility and handover management, non-terrestrial networks, AI-RAN, semantic communications, and AI-native 6G systems.</p>
       <p>He has authored and co-authored SCI-indexed journal articles and conference papers, contributed to three filed Korean patents and two registered software programs, participated in Korean government-funded research projects, and serves as a peer reviewer for <em>IEEE Access</em>.</p>
     </section>
@@ -364,12 +363,12 @@
     <section class="section" id="interests">
       <h2>Research Interests</h2>
       <div class="interest-grid">
-        <div class="card">Autonomous driving and cooperative perception enabled by low-latency, high-reliability 5G NR-V2X (Uu/PC5)</div>
-        <div class="card">Deep reinforcement learning for Level 4 autonomy, including PPO, MAPPO, DA-PPO, DDQN, and dual-attention architectures</div>
-        <div class="card">Learning-based predictive and context-aware mobility and handover management in vehicular networks</div>
-        <div class="card">Non-terrestrial network-terrestrial integration, including UAV and drone communications</div>
-        <div class="card">AI-native 6G communications, AI-RAN, semantic communications, digital twins, and LLM-assisted networking</div>
-        <div class="card">URLLC and intelligent decision-making for cooperative and autonomous systems</div>
+        <div class="card"><strong>5G/6G wireless communications and NR-V2X systems for autonomous driving</strong></div>
+        <div class="card"><strong>Radio-stripe-enabled cell-free massive MIMO systems</strong></div>
+        <div class="card"><strong>AI and deep reinforcement learning for intelligent networked systems</strong></div>
+        <div class="card"><strong>Vehicular networks and mobility and handover optimization</strong></div>
+        <div class="card"><strong>UAV and non-terrestrial network communications</strong></div>
+        <div class="card"><strong>Communication networks for renewable energy integration and smart-grid systems</strong></div>
       </div>
     </section>
 
@@ -499,26 +498,37 @@
             <li>Pakistan Engineering Council Registered Engineer, No. ELECT/98427</li>
             <li>Peer Reviewer, <em>IEEE Access</em> - 20 peer-review records for 15 manuscripts, February 2025-Present</li>
           </ul>
+          <p><a href="pec-certificate.jpg" target="_blank" rel="noopener">View PEC registration certificate</a></p>
         </div>
       </div>
     </section>
 
     <section class="section" id="activities">
       <h2>Activities</h2>
-      <p class="lead">Academic milestones and graduation activities at Inha University.</p>
+      <p class="lead">Research, academic, professional, and graduation activities.</p>
       <div class="gallery">
-        <!-- Upload your activity photos using these filenames. -->
-        <figure><img src="activity-1.jpg" alt="Daud Khan at his graduation ceremony" onclick="openModal(this.src, this.alt)"><figcaption>Graduation ceremony</figcaption></figure>
-        <figure><img src="activity-2.jpg" alt="Daud Khan receiving his graduation certificate" onclick="openModal(this.src, this.alt)"><figcaption>Academic achievement</figcaption></figure>
-        <figure><img src="activity-3.jpg" alt="Daud Khan with a fellow graduate" onclick="openModal(this.src, this.alt)"><figcaption>Graduation celebration</figcaption></figure>
-        <figure class="wide"><img src="activity-4.jpg" alt="Graduate researchers and faculty at Inha University" onclick="openModal(this.src, this.alt)"><figcaption>Graduate researchers and faculty</figcaption></figure>
+        <!-- Upload these JPG files beside index.html in your GitHub repository. -->
+        <figure><img src="activity-1.jpg" alt="Research and academic activity 1" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-2.jpg" alt="Research and academic activity 2" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure class="wide"><img src="activity-3.jpg" alt="Research and academic activity 3" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-5.jpg" alt="Research and academic activity 5" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-6.jpg" alt="Research and academic activity 6" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-7.jpg" alt="Research and academic activity 7" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure class="wide"><img src="activity-8.jpg" alt="Research and academic activity 8" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-9.jpg" alt="Research and academic activity 9" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure class="wide"><img src="activity-10.jpg" alt="Research and academic activity 10" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure class="wide"><img src="activity-11.jpg" alt="Research and academic activity 11" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-12.jpg" alt="Research and academic activity 12" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-13.jpg" alt="Research and academic activity 13" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-14.jpg" alt="Research and academic activity 14" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure><img src="activity-15.jpg" alt="Research and academic activity 15" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
+        <figure class="wide"><img src="activity-16.jpg" alt="Research and academic activity 16" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
       </div>
     </section>
 
     <section class="section" id="contact">
       <h2>Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:daudkhanmrz@gmail.com">daudkhanmrz@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+923427888027">+92 342 788 8027</a></p>
       <p class="muted">For research collaboration, academic opportunities, or questions about my work, please contact me by email.</p>
     </section>
   </main>
