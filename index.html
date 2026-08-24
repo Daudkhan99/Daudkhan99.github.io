@@ -3,576 +3,352 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic portfolio of Daud Khan, a Marie Skłodowska-Curie Fellow working on advanced network connectivity, 5G/6G, NR-V2X, autonomous driving, cooperative perception, and intelligent wireless systems.">
-  <title>Daud Khan | Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio of Daud Khan, a Marie Skłodowska-Curie Fellow researching Radio Stripes, cell-free massive MIMO, 5G/6G, NR-V2X and high-mobility communications.">
+  <title>Daud Khan | Research Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0b3d91;
-      --primary-dark: #08296f;
-      --accent: #d3422f;
-      --bg: #f5f7fb;
-      --surface: #ffffff;
-      --surface-soft: #edf2f8;
-      --text: #202632;
-      --muted: #5c6677;
-      --border: #dce3ed;
-      --shadow: 0 10px 28px rgba(31, 43, 68, 0.08);
+      --navy: #092f4f;
+      --blue: #176d9d;
+      --blue-2: #2e8bb8;
+      --sky: #eaf5fb;
+      --sky-2: #d9edf7;
+      --ink: #15212b;
+      --muted: #64717d;
+      --line: #dbe5eb;
+      --white: #ffffff;
+      --page: #ffffff;
+      --soft: #f6f9fb;
+      --green: #10834d;
+      --green-bg: #effcf5;
+      --shadow: 0 18px 50px rgba(18, 55, 78, .10);
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
 
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Inter", sans-serif;
       line-height: 1.7;
-      transition: background .3s, color .3s;
     }
 
     body.dark {
-      --bg: #0d1117;
-      --surface: #161b22;
-      --surface-soft: #1d2330;
-      --text: #e6edf3;
-      --muted: #aeb8c5;
-      --border: #30363d;
-      --shadow: 0 10px 28px rgba(0, 0, 0, .28);
+      --navy: #8ecbe9;
+      --blue: #62b5df;
+      --blue-2: #7bc8e9;
+      --sky: #162b38;
+      --sky-2: #1d3948;
+      --ink: #eef6fa;
+      --muted: #b3c1ca;
+      --line: #304955;
+      --white: #13232c;
+      --page: #0d1a21;
+      --soft: #10232d;
+      --green: #75dca5;
+      --green-bg: #123528;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .26);
     }
 
-    a { color: var(--primary); }
-    img { max-width: 100%; }
+    a { color: var(--blue); }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 8px;
-      z-index: 2000;
-      padding: 10px 14px;
-      background: var(--surface);
-      color: var(--text);
-    }
-    .skip-link:focus { left: 8px; }
+    .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .section { padding: 92px 0; }
+    .section.soft { background: var(--soft); }
+    .section.sky { background: linear-gradient(135deg, var(--sky), var(--soft)); }
 
-    header {
-      padding: 70px 24px 60px;
-      background:
-        radial-gradient(circle at 12% 16%, rgba(255,255,255,.18), transparent 25%),
-        linear-gradient(135deg, #eff4fb 0%, #ffffff 55%, #f7e7e3 100%);
-      border-bottom: 1px solid var(--border);
-    }
-    body.dark header { background: linear-gradient(135deg, #111827, #1f2937); }
-
-    .hero {
-      width: min(1050px, 100%);
-      margin: auto;
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 18px;
-      border: 4px solid rgba(11, 61, 145, .2);
-      object-fit: cover;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin: 0 0 8px;
-      padding: 6px 12px;
-      color: var(--primary);
-      background: rgba(11, 61, 145, .09);
-      border: 1px solid rgba(11, 61, 145, .18);
-      border-radius: 999px;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .08em;
+    .section-heading { margin-bottom: 36px; }
+    .kicker {
+      margin: 0 0 9px;
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.18; }
+    h2::after { content: ""; display: block; width: 46px; height: 3px; margin-top: 14px; background: var(--blue); border-radius: 99px; }
+    h3 { line-height: 1.35; }
+    .section-intro { max-width: 760px; margin: 15px 0 0; color: var(--muted); }
 
-    h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.1; }
-    .subtitle { margin: 12px 0; color: var(--muted); font-size: 1.08rem; }
-    .contact-line { margin: 6px 0; color: var(--muted); }
+    .skip-link { position: fixed; left: -999px; top: 8px; z-index: 9999; padding: 10px 14px; background: var(--white); color: var(--ink); }
+    .skip-link:focus { left: 8px; }
 
-    .social-icons, .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-    .social-icons a { font-weight: 600; text-decoration: none; }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      color: #fff;
-      background: var(--primary);
-      border: 0;
-      border-radius: 8px;
-      font: inherit;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
-    }
-    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn.secondary { color: var(--primary); background: transparent; border: 1px solid var(--primary); }
-
-    nav {
+    /* Navigation */
+    .site-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      gap: 2px;
-      padding: 10px 62px 10px 14px;
-      overflow-x: auto;
-      background: #111827;
-      box-shadow: 0 4px 18px rgba(0,0,0,.16);
+      z-index: 500;
+      background: color-mix(in srgb, var(--white) 94%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
     }
-    nav a {
-      flex: 0 0 auto;
-      padding: 9px 13px;
-      color: #f8fafc;
-      border-radius: 6px;
-      font-size: .9rem;
-      font-weight: 600;
-      text-decoration: none;
+    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--ink); font-family: "Manrope", sans-serif; font-size: 1.05rem; font-weight: 800; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 5px; }
+    .nav-links a { padding: 9px 10px; color: var(--muted); border-radius: 8px; font-size: .87rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--blue); background: var(--sky); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-button {
+      width: 40px; height: 40px; display: grid; place-items: center;
+      color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 50%; cursor: pointer;
     }
-    nav a:hover, nav a:focus { background: #334155; }
+    .menu-button { display: none; }
 
-    .toggle-btn {
-      position: fixed;
-      top: 10px;
-      right: 14px;
-      z-index: 999;
-      width: 42px;
-      height: 42px;
-      color: #fff;
-      background: #263348;
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.1rem;
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: 92px 0 74px; background: linear-gradient(150deg, var(--white) 48%, var(--sky) 100%); }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero::before { width: 360px; height: 360px; right: -110px; top: -160px; background: rgba(46, 139, 184, .10); }
+    .hero::after { width: 170px; height: 170px; left: -80px; bottom: -70px; background: rgba(23, 109, 157, .08); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 340px; align-items: center; gap: 72px; }
+    .hero-label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; color: var(--blue); background: var(--sky); border: 1px solid #b7d9e8; border-radius: 999px; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-label::before { content: ""; width: 8px; height: 8px; background: var(--blue); border-radius: 50%; }
+    h1 { margin: 20px 0 12px; font-size: clamp(3.4rem, 8vw, 6.6rem); letter-spacing: -.055em; line-height: .98; }
+    h1 span { color: var(--blue); }
+    .hero-title { margin: 0; color: var(--muted); font-size: clamp(1.1rem, 2.3vw, 1.55rem); font-weight: 600; }
+    .hero-copy { max-width: 750px; margin: 25px 0 0; color: var(--muted); font-size: 1.04rem; }
+    .status-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .status-pill { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border-radius: 999px; font-size: .9rem; font-weight: 700; }
+    .status-pill.green { color: var(--green); background: var(--green-bg); border: 1px solid #aee8c8; }
+    .status-pill.blue { color: var(--blue); background: var(--sky); border: 1px solid #b7d9e8; }
+    .status-dot { width: 9px; height: 9px; background: currentColor; border-radius: 50%; }
+    .hero-socials { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 24px; }
+    .hero-socials a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 9px; font-size: .88rem; font-weight: 700; text-decoration: none; transition: .2s; }
+    .hero-socials a:hover { color: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+    .hero-photo-wrap { position: relative; justify-self: center; }
+    .hero-photo-wrap::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--blue); border-radius: 32px; opacity: .14; }
+    .profile-photo { position: relative; width: 300px; height: 370px; object-fit: cover; object-position: top center; background: var(--sky); border: 8px solid var(--white); border-radius: 28px; box-shadow: var(--shadow); }
+    .photo-badge { position: absolute; right: -28px; bottom: 28px; z-index: 2; max-width: 190px; padding: 13px 16px; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 13px; box-shadow: var(--shadow); font-size: .8rem; font-weight: 700; }
+    .photo-badge strong { display: block; color: var(--blue); font-size: 1rem; }
+
+    /* Core topics and achievements */
+    .topic-band { padding: 26px 0 30px; border-bottom: 1px solid var(--line); }
+    .topic-label { margin: 0 0 12px; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .topic-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .topic { padding: 8px 14px; color: var(--blue); background: var(--sky); border: 1px solid #bad8e6; border-radius: 999px; font-size: .84rem; font-weight: 600; }
+    .achievement-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .achievement-card { min-height: 130px; padding: 23px 21px; background: linear-gradient(145deg, var(--sky-2), var(--white)); border: 1px solid #a9cee0; border-radius: 12px; }
+    .achievement-card strong { display: block; color: var(--blue); font-family: "Manrope", sans-serif; font-size: 2rem; line-height: 1; }
+    .achievement-card span { display: block; margin-top: 13px; color: var(--muted); font-size: .88rem; }
+
+    /* About, education and experience */
+    .about-grid { display: grid; grid-template-columns: 1.4fr .6fr; gap: 62px; align-items: start; }
+    .about-copy p { margin-top: 0; color: var(--muted); }
+    .quick-facts { display: grid; gap: 12px; }
+    .fact { padding: 17px 18px; background: var(--soft); border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; }
+    .fact span { display: block; color: var(--muted); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .fact strong { display: block; margin-top: 3px; font-size: .94rem; }
+    .timeline { position: relative; display: grid; gap: 24px; }
+    .timeline::before { content: ""; position: absolute; left: 17px; top: 14px; bottom: 14px; width: 2px; background: var(--line); }
+    .timeline-item { position: relative; padding: 0 0 0 52px; }
+    .timeline-dot { position: absolute; left: 8px; top: 7px; width: 20px; height: 20px; background: var(--white); border: 5px solid var(--blue); border-radius: 50%; }
+    .timeline-card { padding: 25px 26px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 9px 25px rgba(18, 55, 78, .06); }
+    .timeline-card h3 { margin: 0; font-size: 1.1rem; }
+    .timeline-meta { margin: 6px 0 0; color: var(--blue); font-size: .86rem; font-weight: 700; }
+    .timeline-card p:last-child { margin-bottom: 0; color: var(--muted); }
+
+    /* Research accordions */
+    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .research-item { background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+    .research-item[open] { border-color: #9ccade; box-shadow: var(--shadow); }
+    .research-item summary { min-height: 92px; display: grid; grid-template-columns: 48px 1fr 26px; align-items: center; gap: 14px; padding: 18px 20px; cursor: pointer; list-style: none; font-weight: 750; }
+    .research-item summary::-webkit-details-marker { display: none; }
+    .research-icon { width: 46px; height: 46px; display: grid; place-items: center; color: var(--blue); background: var(--sky); border-radius: 12px; }
+    .research-icon svg { width: 25px; height: 25px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .research-plus { color: var(--blue); font-size: 1.4rem; transition: transform .2s; }
+    .research-item[open] .research-plus { transform: rotate(45deg); }
+    .research-detail { margin: 0; padding: 0 20px 22px 82px; color: var(--muted); font-size: .92rem; }
+
+    /* Projects */
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .project-card { overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 35px rgba(18, 55, 78, .07); transition: transform .25s, box-shadow .25s; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-visual { width: 100%; height: 245px; display: grid; place-items: center; overflow: hidden; background: var(--sky); }
+    .project-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .project-visual.anchor img { object-fit: contain; padding: 8px; background: #fff; }
+    .project-visual svg { width: 100%; height: 100%; }
+    .project-body { padding: 25px; }
+    .project-body h3 { margin: 0; font-size: 1.22rem; }
+    .project-subtitle { margin: 5px 0 13px; color: var(--blue); font-size: .88rem; font-weight: 700; }
+    .project-body p { color: var(--muted); font-size: .92rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0; }
+    .project-tag { padding: 5px 9px; color: var(--blue); background: var(--sky); border: 1px solid #b9d7e5; border-radius: 6px; font-size: .75rem; font-weight: 650; }
+    .project-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .project-status { color: var(--muted); font-size: .8rem; }
+    .project-link { display: inline-flex; align-items: center; gap: 7px; padding: 9px 12px; color: var(--blue); background: var(--sky); border: 1px solid #afd1e1; border-radius: 8px; font-size: .82rem; font-weight: 750; text-decoration: none; }
+
+    /* Publications and IP */
+    .publication-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .tab-button { padding: 9px 14px; color: var(--muted); background: var(--white); border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; }
+    .tab-button.active { color: #fff; background: var(--blue); border-color: var(--blue); }
+    .publication-panel { display: none; }
+    .publication-panel.active { display: grid; gap: 12px; }
+    .paper { display: grid; grid-template-columns: 38px 1fr auto; gap: 15px; align-items: start; padding: 20px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+    .paper-number { width: 34px; height: 34px; display: grid; place-items: center; color: var(--blue); background: var(--sky); border-radius: 50%; font-size: .78rem; font-weight: 800; }
+    .paper h3 { margin: 0; font-family: "Inter", sans-serif; font-size: .92rem; font-weight: 750; }
+    .paper p { margin: 6px 0 0; color: var(--muted); font-size: .8rem; }
+    .paper-link { padding: 7px 10px; color: var(--blue); background: var(--sky); border-radius: 7px; font-size: .76rem; font-weight: 750; text-decoration: none; white-space: nowrap; }
+    .review-label { display: inline-block; margin-top: 7px; padding: 4px 8px; color: var(--green); background: var(--green-bg); border-radius: 99px; font-size: .72rem; font-weight: 750; }
+    .ip-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .ip-card { padding: 23px; background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--blue); border-radius: 12px; }
+    .ip-card h3 { margin: 0; font-size: 1rem; }
+    .ip-card p { margin-bottom: 0; color: var(--muted); font-size: .84rem; }
+
+    /* Awards and activities */
+    .award-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .award { padding: 22px; background: var(--white); border: 1px solid var(--line); border-radius: 13px; }
+    .award-icon { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 13px; color: var(--blue); background: var(--sky); border-radius: 11px; font-size: 1.15rem; }
+    .award h3 { margin: 0; font-size: .98rem; }
+    .award p { margin: 7px 0 0; color: var(--muted); font-size: .82rem; }
+    .gallery { columns: 4 220px; column-gap: 13px; }
+    .gallery figure { break-inside: avoid; margin: 0 0 13px; overflow: hidden; border-radius: 12px; background: var(--soft); }
+    .gallery img { width: 100%; cursor: pointer; transition: transform .25s; }
+    .gallery img:hover { transform: scale(1.025); }
+
+    /* Contact and footer */
+    .contact-box { padding: 58px 40px; text-align: center; background: linear-gradient(135deg, var(--sky), var(--white)); border: 1px solid var(--line); border-radius: 24px; }
+    .contact-box h2::after { margin-inline: auto; }
+    .contact-box p { margin: 18px auto 25px; color: var(--muted); }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 11px; }
+    .contact-links a { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 9px; font-size: .88rem; font-weight: 700; text-decoration: none; }
+    .contact-links a.primary { color: #fff; background: var(--blue); border-color: var(--blue); }
+    .footer { padding: 28px 20px; color: #c9d9e2; background: #0b2739; text-align: center; font-size: .83rem; }
+
+    /* Image modal */
+    .modal { display: none; position: fixed; inset: 0; z-index: 1000; padding: 55px 20px 20px; background: rgba(2, 12, 18, .93); }
+    .modal-content { width: auto; max-width: 94%; max-height: 86vh; margin: auto; object-fit: contain; }
+    .modal-close { position: absolute; top: 8px; right: 28px; color: #fff; background: transparent; border: 0; font-size: 2.5rem; cursor: pointer; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 20px; right: 20px; padding: 12px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+      .nav-links.open { display: grid; }
+      .menu-button { display: grid; }
+      .hero-grid { grid-template-columns: 1fr 280px; gap: 42px; }
+      .profile-photo { width: 250px; height: 320px; }
+      .achievement-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .award-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    main { padding: 4px 20px 40px; }
-    .section {
-      width: min(1050px, 100%);
-      margin: 28px auto 0;
-      padding: 34px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .section { padding: 68px 0; }
+      .hero { padding: 65px 0 55px; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-copy { margin-inline: auto; }
+      .status-row, .hero-socials { justify-content: center; }
+      .hero-photo-wrap { grid-row: 1; }
+      .profile-photo { width: 220px; height: 270px; }
+      .photo-badge { right: -18px; bottom: 16px; }
+      .achievement-grid { grid-template-columns: repeat(2, 1fr); }
+      .research-grid, .project-grid, .ip-grid, .award-grid { grid-template-columns: 1fr; }
+      .paper { grid-template-columns: 34px 1fr; }
+      .paper-link { grid-column: 2; justify-self: start; }
+      .research-detail { padding-left: 20px; }
+      .contact-box { padding: 42px 20px; }
     }
 
-    h2 {
-      margin: 0 0 22px;
-      padding-left: 13px;
-      color: var(--text);
-      border-left: 6px solid var(--primary);
-      font-size: clamp(1.55rem, 3vw, 2rem);
-    }
-    h3 { margin-bottom: 6px; line-height: 1.35; }
-    .lead { color: var(--muted); font-size: 1.03rem; }
-    .muted { color: var(--muted); }
-
-    .interest-grid, .project-grid, .publication-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      padding: 20px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--primary);
-      border-radius: 10px;
-    }
-    .section > .card + .card { margin-top: 15px; }
-    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
-    .date { color: var(--accent); font-weight: 600; }
-    .tag {
-      display: inline-block;
-      margin: 4px 5px 0 0;
-      padding: 4px 9px;
-      color: var(--primary);
-      background: rgba(11, 61, 145, .09);
-      border-radius: 999px;
-      font-size: .78rem;
-      font-weight: 600;
-    }
-
-    .publication { margin: 0; }
-    .publication + .publication { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
-    .publication strong { color: var(--text); }
-    .status { color: #16803c; font-weight: 600; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .gallery figure { margin: 0; }
-    .gallery figure.wide { grid-column: span 2; }
-    .gallery img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform .25s;
-    }
-    .gallery figure.wide img { height: 300px; }
-    .gallery img:hover { transform: scale(1.015); }
-    figcaption { margin-top: 7px; color: var(--muted); font-size: .86rem; text-align: center; }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      padding: 60px 20px 20px;
-      background: rgba(0,0,0,.92);
-    }
-    .modal-content { display: block; width: auto; max-width: 92%; max-height: 85vh; margin: auto; }
-    .close { position: absolute; top: 10px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
-
-    .footer { padding: 24px; color: #d9e1ec; background: #111827; text-align: center; }
-
-    @media (max-width: 760px) {
-      header { padding-top: 64px; }
-      .hero { grid-template-columns: 1fr; gap: 22px; text-align: center; }
-      .profile-pic { margin: auto; }
-      .social-icons, .hero-actions { justify-content: center; }
-      nav { justify-content: flex-start; }
-      .section { padding: 24px 20px; }
-      .interest-grid, .project-grid, .publication-grid, .gallery { grid-template-columns: 1fr; }
-      .gallery figure.wide { grid-column: auto; }
-      .gallery img, .gallery figure.wide img { height: auto; max-height: 480px; }
+    @media (max-width: 430px) {
+      h1 { font-size: 3.1rem; }
+      .achievement-grid { grid-template-columns: 1fr; }
+      .achievement-card { min-height: auto; }
+      .topic { font-size: .76rem; }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <button class="toggle-btn" type="button" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Dark / light mode">🌙</button>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header id="home">
-    <div class="hero">
-      <!-- Upload your portrait to GitHub with this exact filename. -->
-      <img src="profile.jpg" class="profile-pic" alt="Portrait of Daud Khan">
-      <div>
-        <p class="eyebrow">Marie Skłodowska-Curie Fellow · Graduate Researcher</p>
-        <h1>Daud Khan</h1>
-        <p class="subtitle">Radio Stripes · Cell-Free Massive MIMO · 5G/6G · NR-V2X · High-Mobility Communications</p>
-        <p class="contact-line"><strong>Email:</strong> <a href="mailto:daudkhanmrz@gmail.com">daudkhanmrz@gmail.com</a></p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/daud-khan9478/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=1zD6lTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://github.com/Daudkhan99" target="_blank" rel="noopener">GitHub</a>
-          
-        </div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Daud Khan</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#publications">Publications</a><a href="#intellectual-property">IP</a><a href="#awards">Awards</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
       </div>
+      <div class="nav-actions"><button class="icon-button" id="themeButton" type="button" aria-label="Toggle dark mode">🌙</button><button class="icon-button menu-button" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu(this)">☰</button></div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-label">Marie Skłodowska-Curie Fellow</span>
+        <h1>Daud <span>Khan</span></h1>
+        <p class="hero-title">PhD Researcher in Electrical Engineering</p>
+        <p class="hero-copy">Developing next-generation wireless systems at the intersection of Radio Stripes, cell-free massive MIMO, 5G/6G, NR-V2X, and high-mobility communications.</p>
+        <div class="status-row"><span class="status-pill green"><span class="status-dot"></span>Open to Research Collaborations</span><span class="status-pill blue">✦ Horizon Europe MSCA Doctoral Network</span></div>
+        <div class="hero-socials"><a href="mailto:daudkhanmrz@gmail.com">✉ Email</a><a href="https://www.linkedin.com/in/daud-khan9478/" target="_blank" rel="noopener">in LinkedIn</a><a href="https://scholar.google.com/citations?user=1zD6lTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">◈ Google Scholar</a><a href="https://github.com/Daudkhan99" target="_blank" rel="noopener">⌘ GitHub</a></div>
+      </div>
+      <div class="hero-photo-wrap"><img class="profile-photo" src="profile.jpg" alt="Portrait of Daud Khan"><div class="photo-badge"><strong>ANCHOR · DC 2.1</strong>Radio Stripes &amp; cell-free mMIMO</div></div>
     </div>
   </header>
 
-  <nav aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#interests">Interests</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#patents">Patents</a>
-    <a href="#software">Software</a>
-    <a href="#skills">Skills</a>
-    <a href="#awards">Awards</a>
-    <a href="#professional">Professional</a>
-    <a href="#activities">Activities</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="topic-band"><div class="container"><p class="topic-label">Core research areas</p><div class="topic-list"><span class="topic">Radio Stripes</span><span class="topic">Cell-Free Massive MIMO</span><span class="topic">5G/6G</span><span class="topic">NR-V2X</span><span class="topic">High-Mobility Communications</span><span class="topic">Deep Reinforcement Learning</span><span class="topic">Non-Terrestrial Networks</span></div></div></div>
 
-  <main id="main-content">
-    <section class="section" id="about">
-      <h2>About Me</h2>
-      <p class="lead">Daud Khan is a Marie Skłodowska-Curie Fellow on the ANCHOR project (Advanced Network Connectivity Using Harmonious Optical and Radio Technologies) at Instituto de Telecomunicações. His PhD research focuses on Radio Stripes (RS)-underpinned cell-free (CF) massive MIMO systems for large coverage and high-mobility environments.</p>
-      <p>He served as a Graduate Research Assistant at the Mobile Telecommunication Research Lab, Inha University, South Korea, and previously worked in the Digital Signal Processing Lab at UET Peshawar. His research spans Level 4 autonomy, V2X Uu/PC5 interfaces, mobility and handover management, non-terrestrial networks, AI-RAN, semantic communications, and AI-native 6G systems.</p>
-      <p>He has authored and co-authored SCI-indexed journal articles and conference papers, contributed to three filed Korean patents and two registered software programs, participated in Korean government-funded research projects, and serves as a peer reviewer for <em>IEEE Access</em>.</p>
-    </section>
+  <main id="main">
+    <section class="section sky" aria-labelledby="achievements-title"><div class="container"><div class="section-heading"><p class="kicker" id="achievements-title">Key achievements</p></div><div class="achievement-grid"><div class="achievement-card"><strong>5</strong><span>Journal papers</span></div><div class="achievement-card"><strong>4</strong><span>Conference papers</span></div><div class="achievement-card"><strong>3</strong><span>Filed patents</span></div><div class="achievement-card"><strong>2</strong><span>Software registrations</span></div><div class="achievement-card"><strong>4+</strong><span>Research projects</span></div></div></div></section>
 
-    <section class="section" id="education">
-      <h2>Education</h2>
-      <article class="card">
-        <h3>PhD in Electrical Engineering</h3>
-        <p><strong>University of Aveiro</strong>, Portugal · <span class="date">Starting September 2026</span></p>
-        <p><strong>Research title:</strong> Radio Stripes (RS)-underpinned cell-free (CF) massive MIMO to support large coverage and high mobility.</p>
-      </article>
-      <article class="card">
-        <h3>Master of Science in Electrical and Computer Engineering</h3>
-        <p><strong>Inha University</strong>, Incheon, South Korea · <span class="date">March 2024 - 20 February 2026</span></p>
-        <p>GPA: 4.07/4.50 · 24 credits</p>
-        <p><strong>Thesis:</strong> Achieving Level 4 Urban Intersection Autonomy through EKF-Based Multi-Modal V2X Sensor Fusion and Deep Reinforcement Learning with Quantitative Sublevel Evaluation.</p>
-      </article>
-      <article class="card">
-        <h3>Bachelor of Science in Electrical Communication Engineering</h3>
-        <p><strong>University of Engineering and Technology (UET) Peshawar</strong>, Pakistan · <span class="date">September 2018 - September 2022</span></p>
-        <p>GPA: 3.19/4.00 · 134 credits</p>
-        <p><strong>Thesis:</strong> Design Methodology of On-Grid Solar PV Powered System for University Campuses.</p>
-      </article>
-    </section>
+    <section class="section" id="about"><div class="container about-grid"><div class="about-copy"><div class="section-heading"><p class="kicker">Profile</p><h2>Researching connected intelligence</h2></div><p>Daud Khan is a Marie Skłodowska-Curie Fellow in the ANCHOR project at Instituto de Telecomunicações and a PhD researcher in Electrical Engineering at the University of Aveiro. His doctoral work focuses on Radio Stripes-underpinned cell-free massive MIMO for wide coverage and reliable connectivity in high-mobility environments.</p><p>His earlier work at Inha University, South Korea, combined 5G NR-V2X, cooperative perception, multi-sensor fusion, and deep reinforcement learning to advance Level 4 autonomous driving. He has authored SCI-indexed research, contributed to filed patents and registered software, and worked on government-funded telecommunications projects.</p></div><div class="quick-facts"><div class="fact"><span>Current affiliation</span><strong>Instituto de Telecomunicações</strong></div><div class="fact"><span>Doctoral institution</span><strong>University of Aveiro</strong></div><div class="fact"><span>Research programme</span><strong>ANCHOR · Horizon Europe MSCA DN</strong></div><div class="fact"><span>Previous laboratory</span><strong>MTRL · Inha University</strong></div></div></div></section>
 
-    <section class="section" id="experience">
-      <h2>Research Experience</h2>
-      <article class="card">
-        <h3>Graduate Research Assistant</h3>
-        <p><strong>Instituto de Telecomunicações</strong>, Portugal · <span class="date">Starting September 2026</span></p>
-        <p><strong>Project:</strong> ANCHOR (Advanced Network Connectivity Using Harmonious Optical and Radio Technologies), a Horizon Europe Marie Skłodowska-Curie Doctoral Network.</p>
-        <p><strong>Research title:</strong> Radio Stripes (RS)-underpinned cell-free (CF) massive MIMO to support large coverage and high mobility.</p>
-      </article>
-      <article class="card">
-        <h3>Graduate Research Assistant</h3>
-        <p><strong>Mobile Telecommunication Research Lab (MTRL), Inha University</strong> · Incheon, South Korea · <span class="date">March 2024 - January 2026</span></p>
-        <ul>
-          <li>Conducted research on intelligent transportation systems, autonomous driving, and cooperative perception.</li>
-          <li>Developed multi-sensor data-fusion frameworks integrating real-time 5G NR-V2X communications.</li>
-          <li>Designed and evaluated AI/ML decision-making models to enhance vehicle autonomy levels.</li>
-          <li>Implemented heterogeneous-interface V2X message fusion for improved situational awareness and safety.</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Research Assistant</h3>
-        <p><strong>Digital Signal Processing Lab, UET Peshawar</strong> · Pakistan · <span class="date">September 2018 - September 2022</span></p>
-        <ul>
-          <li>Designed and simulated an optimized on-grid solar PV system using HOMER Pro and HelioScope.</li>
-          <li>Performed load analysis, solar assessment, and component sizing for reliable, low-cost energy.</li>
-          <li>Published a Green Campus model achieving a 60% renewable-energy contribution.</li>
-        </ul>
-      </article>
-    </section>
+    <section class="section soft" id="education"><div class="container"><div class="section-heading"><p class="kicker">Academic journey</p><h2>Education</h2></div><div class="timeline"><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>PhD in Electrical Engineering</h3><p class="timeline-meta">University of Aveiro, Portugal · Starting September 2026</p><p>Doctoral research within ANCHOR on Radio Stripes-underpinned cell-free massive MIMO for large coverage and high mobility.</p></div></article><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>Master of Science in Electrical and Computer Engineering</h3><p class="timeline-meta">Inha University, South Korea · March 2024 - 20 February 2026</p><p>GPA: 4.07/4.50. Thesis on Level 4 urban-intersection autonomy using EKF-based multimodal V2X sensor fusion and deep reinforcement learning.</p></div></article><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>Bachelor of Science in Electrical Communication Engineering</h3><p class="timeline-meta">UET Peshawar, Pakistan · September 2018 - September 2022</p><p>GPA: 3.19/4.00. Thesis on an on-grid solar PV-powered system for university campuses.</p></div></article></div></div></section>
 
-    <section class="section" id="interests">
-      <h2>Research Interests</h2>
-      <div class="interest-grid">
-        <div class="card"><strong>5G/6G wireless communications and NR-V2X systems for autonomous driving</strong></div>
-        <div class="card"><strong>Radio-stripe-enabled cell-free massive MIMO systems</strong></div>
-        <div class="card"><strong>AI and deep reinforcement learning for intelligent networked systems</strong></div>
-        <div class="card"><strong>Vehicular networks and mobility and handover optimization</strong></div>
-        <div class="card"><strong>UAV and non-terrestrial network communications</strong></div>
-        <div class="card"><strong>Communication networks for renewable energy integration and smart-grid systems</strong></div>
-      </div>
-    </section>
+    <section class="section" id="experience"><div class="container"><div class="section-heading"><p class="kicker">Appointments</p><h2>Research experience</h2></div><div class="timeline"><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>Graduate Research Assistant</h3><p class="timeline-meta">Instituto de Telecomunicações, Portugal · Starting September 2026</p><p>ANCHOR (Advanced Network Connectivity using Harmonious Optical and Radio Technologies), a Horizon Europe Marie Skłodowska-Curie Doctoral Network, supported through an MSCA fellowship.</p></div></article><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>Graduate Research Assistant</h3><p class="timeline-meta">Mobile Telecommunication Research Lab, Inha University · March 2024 - January 2026</p><p>Worked on three IITP Korea-supported projects focused on 5G NR-V2X technologies for autonomous-driving services.</p></div></article><article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-card"><h3>Research Assistant</h3><p class="timeline-meta">Digital Signal Processing Lab, UET Peshawar · September 2018 - September 2022</p><p>Researched and published an optimized renewable-energy model for a solar-powered university campus.</p></div></article></div></div></section>
 
-    <section class="section" id="research">
-      <h2>Research Projects</h2>
-      <div class="project-grid">
-        <article class="card">
-          <h3>5G-NR-V2X for Level 4 Autonomous Driving</h3>
-          <p>Development of 5G-NR-V2X communication technology to support Level 4 autonomous-driving services.</p>
-          <p class="date">March 2024 – 2026</p>
-          <p class="muted">MSIT Grant · Project No. 2022-0-00521 · Supported by IITP, Korea</p>
-        </article>
-        <article class="card">
-          <h3>Ultra-High-Speed V2X Autonomous Driving Services</h3>
-          <p>Development of ultra-high-speed V2X communication-based autonomous-driving service technologies.</p>
-          <p class="date">March 2024 – February 2025</p>
-          <p class="muted">MSIT Grant · Project No. 2021-0-01140 · Supported by IITP, Korea</p>
-        </article>
-        <article class="card">
-          <h3>3D Space Mobile Communication Technology</h3>
-          <p>Development of three-dimensional space mobile communication technology.</p>
-          <p class="date">March 2024 – 2026</p>
-          <p class="muted">MSIT Grant · Project No. 2021-0-00794 · Supported by IITP, Korea</p>
-        </article>
-      </div>
-    </section>
+    <section class="section sky" id="research"><div class="container"><div class="section-heading"><p class="kicker">Research portfolio</p><h2>Areas of investigation</h2><p class="section-intro">Select an area to see how it connects to my current doctoral work and previous research in autonomous and networked systems.</p></div><div class="research-grid">
+      <details class="research-item" open><summary><span class="research-icon"><svg viewBox="0 0 24 24"><path d="M4 18V9m5 9V6m5 12V3m5 15V8"/><path d="M2 21h20"/></svg></span><span>5G/6G &amp; NR-V2X for autonomous driving</span><span class="research-plus">+</span></summary><p class="research-detail">Low-latency Uu/PC5 links, cooperative perception, sensor sharing, radio-resource management, and reliable decision support for Level 4 autonomous-driving scenarios.</p></details>
+      <details class="research-item"><summary><span class="research-icon"><svg viewBox="0 0 24 24"><path d="M3 17c3-3 6-3 9 0s6 3 9 0"/><path d="M5 13c2-2 4-2 6 0s4 2 6 0"/><path d="M8 9c1-1 2-1 3 0s2 1 3 0"/><circle cx="12" cy="20" r="1"/></svg></span><span>Radio Stripes &amp; cell-free massive MIMO</span><span class="research-plus">+</span></summary><p class="research-detail">Distributed radio access along flexible Radio Stripes, user-centric cell-free processing, seamless handover, and robust connectivity across wide areas and high-mobility environments.</p></details>
+      <details class="research-item"><summary><span class="research-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></span><span>AI &amp; deep reinforcement learning</span><span class="research-plus">+</span></summary><p class="research-detail">PPO, dual-attention policies, actor-critic learning, multi-agent control, and context-aware decision systems for intelligent wireless networks and autonomous mobility.</p></details>
+      <details class="research-item"><summary><span class="research-icon"><svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l2-6h10l2 6"/><circle cx="8" cy="18" r="2"/><circle cx="16" cy="18" r="2"/><path d="M9 8h6m-3-3v6"/></svg></span><span>Vehicular mobility &amp; handover optimization</span><span class="research-plus">+</span></summary><p class="research-detail">Predictive handover, dual connectivity, context-aware interface selection, and mobility orchestration for uninterrupted V2X communications in dense urban networks.</p></details>
+      <details class="research-item"><summary><span class="research-icon"><svg viewBox="0 0 24 24"><path d="m12 3 3 5-3 3-3-3 3-5Z"/><path d="M5 13c2-2 4-2 7 0s5 2 7 0M3 18c3-3 6-3 9 0s6 3 9 0"/></svg></span><span>UAV &amp; non-terrestrial networks</span><span class="research-plus">+</span></summary><p class="research-detail">Integrated aerial, satellite, and terrestrial platforms for extended coverage, resilient mobility, three-dimensional networking, and seamless service continuity.</p></details>
+      <details class="research-item"><summary><span class="research-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V4m5 16v-7m5 7V7"/><path d="m3 7 5-4 5 5 6-5"/></svg></span><span>Smart-grid &amp; renewable-energy networks</span><span class="research-plus">+</span></summary><p class="research-detail">Communication-aware renewable integration, data-driven energy management, and reliable network support for sustainable smart-grid and campus-energy systems.</p></details>
+    </div></div></section>
 
-    <section class="section" id="publications">
-      <h2>Publications</h2>
+    <section class="section" id="projects"><div class="container"><div class="section-heading"><p class="kicker">Selected work</p><h2>Research projects</h2><p class="section-intro">Four externally supported projects spanning future 6G access, connected mobility, V2X service delivery, and three-dimensional communications.</p></div><div class="project-grid">
+      <article class="project-card"><div class="project-visual anchor"><img src="ANCHOR-concept.png" alt="ANCHOR concept showing integrated underwater, terrestrial, aerial and space communications"></div><div class="project-body"><h3>ANCHOR Doctoral Network</h3><p class="project-subtitle">Advanced Network Connectivity using Harmonious Optical and Radio Technologies</p><p>A Horizon Europe Marie Skłodowska-Curie Doctoral Network advancing sustainable 6G and beyond connectivity across underwater, terrestrial, aerial, and space platforms.</p><div class="project-tags"><span class="project-tag">Radio Stripes</span><span class="project-tag">Cell-Free mMIMO</span><span class="project-tag">6G</span><span class="project-tag">High Mobility</span></div><div class="project-footer"><span class="project-status"><strong>Status:</strong> Doctoral project</span><a class="project-link" href="https://www.anchor.strath.ac.uk/" target="_blank" rel="noopener">Visit ANCHOR ↗</a></div></div></article>
+      <article class="project-card"><div class="project-visual"><svg viewBox="0 0 800 300" role="img" aria-label="Connected vehicles exchanging V2X signals in an urban intersection"><defs><linearGradient id="v2xBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#073b5b"/><stop offset="1" stop-color="#2d91bd"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="800" height="300" fill="url(#v2xBg)"/><path d="M0 210h800M360 0v300M440 0v300" stroke="#b6dae9" stroke-width="70" opacity=".22"/><path d="M0 210h800M400 0v300" stroke="#d6edf6" stroke-width="4" stroke-dasharray="22 18" opacity=".7"/><g fill="#fff"><rect x="125" y="175" width="110" height="44" rx="12"/><circle cx="150" cy="225" r="13" fill="#0b3048"/><circle cx="210" cy="225" r="13" fill="#0b3048"/><rect x="145" y="155" width="60" height="30" rx="9" opacity=".8"/><rect x="485" y="80" width="110" height="44" rx="12" transform="rotate(90 540 102)"/><circle cx="525" cy="64" r="13" fill="#0b3048"/><circle cx="525" cy="140" r="13" fill="#0b3048"/></g><g fill="none" stroke="#74e7ff" stroke-width="4" filter="url(#glow)"><path d="M235 175q120-105 250-60"/><path d="M255 190q95-70 210-48"/><circle cx="400" cy="150" r="28"/><circle cx="400" cy="150" r="52" opacity=".6"/></g><text x="45" y="55" fill="#fff" font-family="Inter" font-size="26" font-weight="700">5G NR-V2X · Level 4 Autonomy</text></svg></div><div class="project-body"><h3>5G NR-V2X for Level 4 Autonomous Driving</h3><p class="project-subtitle">MSIT Grant · Project No. 2022-0-00521 · IITP Korea</p><p>Research on dependable 5G NR-V2X communication and cooperative perception to support Level 4 autonomous-driving services in complex urban environments.</p><div class="project-tags"><span class="project-tag">NR-V2X</span><span class="project-tag">Sensor Fusion</span><span class="project-tag">Reinforcement Learning</span></div><div class="project-footer"><span class="project-status"><strong>Role:</strong> Project in charge</span><span class="project-status">2024-2026</span></div></div></article>
+      <article class="project-card"><div class="project-visual"><svg viewBox="0 0 800 300" role="img" aria-label="High-speed vehicles connected to roadside communication units"><defs><linearGradient id="speedBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a5062"/><stop offset="1" stop-color="#68b9c2"/></linearGradient></defs><rect width="800" height="300" fill="url(#speedBg)"/><path d="M0 245 800 170" stroke="#d7f3f2" stroke-width="75" opacity=".24"/><path d="M0 245 800 170" stroke="#fff" stroke-width="4" stroke-dasharray="28 19" opacity=".8"/><g stroke="#d9ffff" stroke-width="5" fill="none"><path d="M160 180v-110m-22 110h44M160 70l-18 25m18-25 18 25"/><path d="M640 140V35m-22 105h44M640 35l-18 25m18-25 18 25"/><path d="M177 87q220-120 445-35" opacity=".65"/><path d="M184 110q210-85 435-35" opacity=".45"/></g><g fill="#fff"><path d="m280 185 32-48h125l45 32 62 2 18 44-24 17H287l-28-18Z"/><circle cx="329" cy="222" r="19" fill="#123b4c"/><circle cx="500" cy="211" r="19" fill="#123b4c"/></g><text x="42" y="52" fill="#fff" font-family="Inter" font-size="26" font-weight="700">Ultra-High-Speed V2X Services</text></svg></div><div class="project-body"><h3>Ultra-High-Speed V2X Autonomous-Driving Services</h3><p class="project-subtitle">MSIT Grant · Project No. 2021-0-01140 · IITP Korea</p><p>Development and evaluation of high-speed V2X communication services for connected autonomous vehicles, emphasizing reliability and rapid information exchange.</p><div class="project-tags"><span class="project-tag">V2X</span><span class="project-tag">Low Latency</span><span class="project-tag">Connected Mobility</span></div><div class="project-footer"><span class="project-status"><strong>Status:</strong> Completed</span><span class="project-status">2024-2025</span></div></div></article>
+      <article class="project-card"><div class="project-visual"><svg viewBox="0 0 800 300" role="img" aria-label="Satellite, drone and terrestrial nodes forming a 3D mobile network"><defs><linearGradient id="spaceBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091a45"/><stop offset="1" stop-color="#694b9d"/></linearGradient></defs><rect width="800" height="300" fill="url(#spaceBg)"/><circle cx="85" cy="58" r="2" fill="#fff"/><circle cx="320" cy="45" r="2" fill="#fff"/><circle cx="695" cy="75" r="2" fill="#fff"/><path d="M-80 330Q380 90 880 330" fill="#226d83" stroke="#8ed8e9" stroke-width="4"/><g transform="translate(590 55) rotate(-10)"><rect x="-35" y="-10" width="70" height="20" rx="5" fill="#fff"/><rect x="-100" y="-24" width="55" height="48" fill="#6cbcd8"/><rect x="45" y="-24" width="55" height="48" fill="#6cbcd8"/><path d="M0 10v35" stroke="#fff" stroke-width="6"/></g><g transform="translate(260 145)" stroke="#fff" stroke-width="5" fill="none"><path d="M-60 0h120M0-35v70M-52-20l104 40M52-20-52 20"/><circle r="16" fill="#fff"/></g><g stroke="#73e2ff" stroke-width="3" fill="none" opacity=".85"><path d="M590 95Q450 190 280 150"/><path d="M590 95Q520 205 610 250"/><path d="M280 155Q355 235 425 255"/></g><text x="42" y="52" fill="#fff" font-family="Inter" font-size="26" font-weight="700">3D Space Mobile Communications</text></svg></div><div class="project-body"><h3>3D Space Mobile Communication Technology</h3><p class="project-subtitle">MSIT Grant · Project No. 2021-0-00794 · IITP Korea</p><p>Research on integrated terrestrial, aerial, and space communication technologies to extend coverage and strengthen resilient mobility support.</p><div class="project-tags"><span class="project-tag">NTN</span><span class="project-tag">UAV</span><span class="project-tag">Satellite</span><span class="project-tag">3D Networks</span></div><div class="project-footer"><span class="project-status"><strong>Status:</strong> Research project</span><span class="project-status">2024-2026</span></div></div></article>
+    </div></div></section>
 
-      <h3>Published Journal Articles</h3>
-      <div class="publication-grid">
-        <div class="card">
-          <p class="publication"><strong>Achieving Level 4 Autonomy in Urban Intersections through EKF-Based Multi-Modal Fusion Enhanced by Dual-Attention PPO.</strong><br>Daud Khan, S. Aslam, S. Mondal, and K. H. Chang. <em>Robotics and Autonomous Systems</em>, September 2025. <span class="tag">IF: 6.0</span> <a href="https://doi.org/10.1016/j.robot.2026.105373" target="_blank" rel="noopener">DOI</a></p>
-          <p class="publication"><strong>Vehicle-to-Infrastructure Multi-Sensor Fusion (V2I-MSF) with Reinforcement Learning Framework for Enhancing Autonomous Vehicle Perception.</strong><br>Daud Khan, S. Aslam, and K. H. Chang. <em>IEEE Access</em>, vol. 13, pp. 50122-50136, March 2025. <span class="tag">IF: 4.2</span> <a href="https://doi.org/10.1109/ACCESS.2025.3551367" target="_blank" rel="noopener">DOI</a></p>
-          <p class="publication"><strong>RSU-Assisted V2X Message Fusion via PC5 and Uu with Actor-Critic Modeling for Autonomous Driving under Intersection Scenario.</strong><br>S. Aslam, Daud Khan, S. Mondal, and K. H. Chang. <em>Vehicular Communications</em>, September 2025. <span class="tag">IF: 5.7</span> <a href="https://doi.org/10.1016/j.vehcom.2025.100972" target="_blank" rel="noopener">DOI</a></p>
-        </div>
-        <div class="card">
-          <p class="publication"><strong>The Shared Experience Actor-Critic (SEAC) Approach for Allocating Radio Resources and Mitigating Resource Collisions in 5G-NR-V2X Mode 2 under Aperiodic Traffic Conditions.</strong><br>S. Aslam, Daud Khan, and K. H. Chang. <em>Sensors</em>, vol. 24, pp. 1-22, October 2024. <span class="tag">IF: 4.0</span> <a href="https://doi.org/10.3390/s24206769" target="_blank" rel="noopener">DOI</a></p>
-          <p class="publication"><strong>Intelligent Handover Orchestration in Beyond-5G and Urban V2X Dual Connectivity Networks: A Deep Reinforcement Learning Approach.</strong><br>S. Mondal, S. Aslam, Daud Khan, and K. H. Chang. <em>IEEE Access</em>, vol. 13, pp. 196509-196525, December 2025. <span class="tag">IF: 4.2</span> <a href="https://doi.org/10.1109/ACCESS.2025.3633314" target="_blank" rel="noopener">DOI</a></p>
-        </div>
-      </div>
+    <section class="section soft" id="publications"><div class="container"><div class="section-heading"><p class="kicker">Research output</p><h2>Publications</h2><p class="section-intro">Peer-reviewed journal articles, manuscripts under review, and conference contributions.</p></div><div class="publication-tabs" role="tablist"><button class="tab-button active" type="button" data-panel="journals">Journal papers (5)</button><button class="tab-button" type="button" data-panel="review">Under review (2)</button><button class="tab-button" type="button" data-panel="conferences">Conferences (4)</button></div>
+      <div class="publication-panel active" id="journals"><article class="paper"><span class="paper-number">01</span><div><h3>Achieving Level 4 Autonomy in Urban Intersections through EKF-Based Multi-Modal Fusion Enhanced by Dual-Attention PPO</h3><p>Daud Khan, S. Aslam, S. Mondal, and K. H. Chang · <em>Robotics and Autonomous Systems</em> · IF: 6.0</p></div><a class="paper-link" href="https://doi.org/10.1016/j.robot.2026.105373" target="_blank" rel="noopener">DOI ↗</a></article><article class="paper"><span class="paper-number">02</span><div><h3>Vehicle-to-Infrastructure Multi-Sensor Fusion with Reinforcement Learning for Enhancing Autonomous Vehicle Perception</h3><p>Daud Khan, S. Aslam, and K. H. Chang · <em>IEEE Access</em>, vol. 13, pp. 50122-50136 · IF: 4.2</p></div><a class="paper-link" href="https://doi.org/10.1109/ACCESS.2025.3551367" target="_blank" rel="noopener">DOI ↗</a></article><article class="paper"><span class="paper-number">03</span><div><h3>RSU-Assisted V2X Message Fusion via PC5 and Uu with Actor-Critic Modeling for Autonomous Driving</h3><p>S. Aslam, Daud Khan, S. Mondal, and K. H. Chang · <em>Vehicular Communications</em> · IF: 5.7</p></div><a class="paper-link" href="https://doi.org/10.1016/j.vehcom.2025.100972" target="_blank" rel="noopener">DOI ↗</a></article><article class="paper"><span class="paper-number">04</span><div><h3>The Shared Experience Actor-Critic Approach for Radio-Resource Allocation in 5G NR-V2X Mode 2</h3><p>S. Aslam, Daud Khan, and K. H. Chang · <em>Sensors</em>, vol. 24, pp. 1-22 · IF: 4.0</p></div><a class="paper-link" href="https://doi.org/10.3390/s24206769" target="_blank" rel="noopener">DOI ↗</a></article><article class="paper"><span class="paper-number">05</span><div><h3>Intelligent Handover Orchestration in Beyond-5G and Urban V2X Dual Connectivity Networks</h3><p>S. Mondal, S. Aslam, Daud Khan, and K. H. Chang · <em>IEEE Access</em>, vol. 13, pp. 196509-196525 · IF: 4.2</p></div><a class="paper-link" href="https://doi.org/10.1109/ACCESS.2025.3633314" target="_blank" rel="noopener">DOI ↗</a></article></div>
+      <div class="publication-panel" id="review"><article class="paper"><span class="paper-number">01</span><div><h3>Context-Aware Multi-Link Communication for Cooperative Vehicle Perception in 5G NR V2X Networks</h3><p>Daud Khan, S. Aslam, A. U. Rehman, A. Afridi, A. Manan, and R. Wichman · Submitted to <em>IEEE Open Journal of the Communications Society</em> · IF: 6.2</p><span class="review-label">Under first review</span></div></article><article class="paper"><span class="paper-number">02</span><div><h3>Improved Harmonic Performance of a Standalone Five-Level Cascaded H-Bridge Photovoltaic Inverter Using Redundancy-Aware FCS-MPC</h3><p>M. Ayaz, H. A. Khan, Daud Khan, S. T. Jan, and G. Rukh · Submitted to <em>Electric Power Systems Research</em> · IF: 4.3</p><span class="review-label">Under first review</span></div></article></div>
+      <div class="publication-panel" id="conferences"><article class="paper"><span class="paper-number">01</span><div><h3>Evolution in 5G NR V2X Technology - Enhancements in 3GPP Releases 17 and 18</h3><p>Daud Khan, S. Aslam, and K. H. Chang · KICS Summer Conference · 2024</p></div><a class="paper-link" href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11906283" target="_blank" rel="noopener">View ↗</a></article><article class="paper"><span class="paper-number">02</span><div><h3>Enhancing Autonomous Driving Reliability through DIT Strategy for Adaptive Resource Re-Evaluation</h3><p>S. Mondal, Daud Khan, S. Aslam, and K. H. Chang · KICS Winter Conference · 2025</p></div><a class="paper-link" href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132720" target="_blank" rel="noopener">View ↗</a></article><article class="paper"><span class="paper-number">03</span><div><h3>Beyond Line-of-Sight: V2X-Enabled Occlusion-Aware Lane Change Decisions</h3><p>S. Siddique, S. Mondal, Daud Khan, and K. H. Chang · CTCon, Japan · 2025</p></div><a class="paper-link" href="https://www.researchgate.net/publication/399988616_Beyond_Line-of-Sight_V2X-Enabled_Occlusion-Aware_Lane_Change_Decisions" target="_blank" rel="noopener">View ↗</a></article><article class="paper"><span class="paper-number">04</span><div><h3>Design Methodology of On-Grid Solar PV Powered System for University Campuses</h3><p>Daud Khan, R. Hadi, M. Farhan, A. Aziz, and K. Ur Rehman · ICSET 2022</p></div><a class="paper-link" href="https://www.researchgate.net/publication/395975110_Design_Methodology_of_ON_Grid_Solar_PV_Powered_System_for_university_campuses" target="_blank" rel="noopener">View ↗</a></article></div>
+    </div></section>
 
-      <h3>Under Review</h3>
-      <div class="card">
-        <p class="publication"><strong>Context-Aware Multi-Link Communication for Cooperative Vehicle Perception in 5G NR V2X Networks.</strong><br>Daud Khan, S. Aslam, A. U. Rehman, A. Afridi, A. Manan, and R. Wichman. Submitted to <em>IEEE Open Journal of the Communications Society</em>. <span class="status">Under first review</span> <span class="tag">IF: 6.2</span></p>
-        <p class="publication"><strong>Improved Harmonic Performance of a Standalone Five-Level Cascaded H-Bridge Photovoltaic Inverter Using Redundancy-Aware Finite-Control-Set Model Predictive Control.</strong><br>M. Ayaz, H. A. Khan, Daud Khan, S. T. Jan, and G. Rukh. Submitted to <em>Electric Power Systems Research</em>. <span class="status">Under first review</span> <span class="tag">IF: 4.3</span></p>
-      </div>
+    <section class="section" id="intellectual-property"><div class="container"><div class="section-heading"><p class="kicker">Innovation</p><h2>Patents &amp; software</h2></div><h3>Filed Korean patents</h3><div class="ip-grid"><article class="ip-card"><h3>EKF-Based Multi-Modal Fusion for Urban-Intersection Autonomous Driving</h3><p>KyungHi Chang, Daud Khan, and Sawera Aslam · Patent No. 10-2025-0109562 · Filed August 8, 2025</p></article><article class="ip-card"><h3>RSU-Assisted V2X Message Fusion via PC5 and Uu Interfaces</h3><p>KyungHi Chang, Sawera Aslam, and Daud Khan · Patent No. 10-2025-0109024 · Filed August 7, 2025</p></article><article class="ip-card"><h3>Reinforcement Learning-Based Intelligent Handover Control</h3><p>KyungHi Chang, Sudeb Mondal, Sawera Aslam, and Daud Khan · Patent No. 10-2025-0192623 · Filed December 8, 2025</p></article></div><h3 style="margin-top:34px">Registered software</h3><div class="ip-grid"><article class="ip-card"><h3>Dual-Attention PPO-Enhanced EKF Multi-Sensor Fusion Simulator</h3><p>Daud Khan, Sawera Aslam, and KyungHi Chang · Korea Copyright Commission · Program No. C-2025-030562 · Registered August 11, 2025</p></article><article class="ip-card"><h3>RSU-Based V2X Message Fusion and Actor-Critic Modeling</h3><p>Sawera Aslam, Daud Khan, and KyungHi Chang · Korea Copyright Commission · Program No. C-2025-029328 · Registered August 1, 2025</p></article></div></div></section>
 
-      <h3>Conference Publications &amp; Presentations</h3>
-      <div class="card">
-        <p class="publication"><strong>Evolution in 5G NR V2X Technology - A Detailed Look at Enhancements in 3GPP Releases 17 and 18.</strong><br>Daud Khan, S. Aslam, and K. H. Chang. KICS Summer Conference, pp. 990-991, June 2024. <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11906283" target="_blank" rel="noopener">Link</a></p>
-        <p class="publication"><strong>Enhancing Autonomous Driving Reliability through DIT Strategy for Adaptive Resource Re-Evaluation Mechanism.</strong><br>S. Mondal, Daud Khan, S. Aslam, and K. H. Chang. KICS Winter Conference, pp. 714-715, February 2025. <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132720" target="_blank" rel="noopener">Link</a></p>
-        <p class="publication"><strong>Beyond Line-of-Sight: V2X-Enabled Occlusion-Aware Lane Change Decisions.</strong><br>S. Siddique, S. Mondal, Daud Khan, and K. H. Chang. Proceedings of CTCon, Japan, December 2025, pp. 50-51. <a href="https://www.researchgate.net/publication/399988616_Beyond_Line-of-Sight_V2X-Enabled_Occlusion-Aware_Lane_Change_Decisions" target="_blank" rel="noopener">Link</a></p>
-        <p class="publication"><strong>Design Methodology of On-Grid Solar PV Powered System for University Campuses.</strong><br>Daud Khan, R. Hadi, M. Farhan, A. Aziz, and K. Ur Rehman. 4th International Conference on Sustainable Energy Technologies (ICSET 2022), Peshawar, Pakistan, pp. 141-150, December 2022. <a href="https://www.researchgate.net/publication/395975110_Design_Methodology_of_ON_Grid_Solar_PV_Powered_System_for_university_campuses" target="_blank" rel="noopener">Link</a></p>
-      </div>
-    </section>
+    <section class="section soft" id="awards"><div class="container"><div class="section-heading"><p class="kicker">Recognition</p><h2>Awards &amp; honors</h2></div><div class="award-grid"><article class="award"><div class="award-icon">✦</div><h3>Marie Skłodowska-Curie Fellowship</h3><p>ANCHOR Horizon Europe Doctoral Network · Instituto de Telecomunicações</p></article><article class="award"><div class="award-icon">★</div><h3>Jungseok International Scholarship</h3><p>Full tuition scholarship · Inha University · 2024-Present</p></article><article class="award"><div class="award-icon">◆</div><h3>BK21 Scholarship</h3><p>Korean Government-funded scholarship · 2024-Present</p></article><article class="award"><div class="award-icon">◈</div><h3>Project-Funded Scholarship</h3><p>Mobile Telecommunication Research Lab · 2024-Present</p></article><article class="award"><div class="award-icon">●</div><h3>PEF Merit &amp; Need-Based Scholarship</h3><p>Professional Educational Foundation · 2018-2022</p></article><article class="award"><div class="award-icon">▣</div><h3>Full Tuition &amp; Laptop Scholarship</h3><p>The Orbit College, Thand Koi · 2016-2018</p></article></div></div></section>
 
-    <section class="section" id="patents">
-      <h2>Patents</h2>
-      <div class="card">
-        <h3>Apparatus and Method for Achieving Autonomous Driving in Urban Intersections through Extended Kalman Filter-Based Multi-Modal Fusion in Wireless Communication System</h3>
-        <p>KyungHi Chang, Daud Khan, and Sawera Aslam. Inha University Industry-Academic Cooperation Foundation.</p>
-        <p><strong>Patent No. 10-2025-0109562</strong> · <span class="status">Filed August 8, 2025</span></p>
-      </div>
-      <div class="card">
-        <h3>Apparatus and Method for Roadside Unit-Assisted Vehicle-to-Everything Message Fusion via PC5 and Uu Interfaces for Autonomous Driving in Intersection Scenarios in Wireless Communication System</h3>
-        <p>KyungHi Chang, Sawera Aslam, and Daud Khan. Inha University Industry-Academic Cooperation Foundation.</p>
-        <p><strong>Patent No. 10-2025-0109024</strong> · <span class="status">Filed August 7, 2025</span></p>
-      </div>
-      <div class="card">
-        <h3>Apparatus and Method for Reinforcement Learning-Based Intelligent Handover Control in Dual Connectivity Environment in Wireless Communication System</h3>
-        <p>KyungHi Chang, Sudeb Mondal, Sawera Aslam, and Daud Khan. Inha University Industry-Academic Cooperation Foundation.</p>
-        <p><strong>Patent No. 10-2025-0192623</strong> · <span class="status">Filed December 8, 2025</span></p>
-      </div>
-    </section>
+    <section class="section" id="activities"><div class="container"><div class="section-heading"><p class="kicker">Beyond the lab</p><h2>Activities</h2><p class="section-intro">Research, academic, professional, and graduation moments.</p></div><div class="gallery"><figure><img src="activity-1.jpg" alt="Academic activity 1" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-2.jpg" alt="Academic activity 2" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-3.jpg" alt="Academic activity 3" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-5.jpg" alt="Academic activity 5" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-6.jpg" alt="Academic activity 6" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-7.jpg" alt="Academic activity 7" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-8.jpg" alt="Academic activity 8" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-9.jpg" alt="Academic activity 9" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-10.jpg" alt="Academic activity 10" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-11.jpg" alt="Academic activity 11" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-12.jpg" alt="Academic activity 12" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-13.jpg" alt="Academic activity 13" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-14.jpg" alt="Academic activity 14" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-15.jpg" alt="Academic activity 15" loading="lazy" onclick="openModal(this)"></figure><figure><img src="activity-16.jpg" alt="Academic activity 16" loading="lazy" onclick="openModal(this)"></figure></div></div></section>
 
-    <section class="section" id="software">
-      <h2>Software Registrations</h2>
-      <div class="card">
-        <h3>EKF-Based Multi-Sensor Fusion Intersection Autonomous-Driving Simulator Enhanced by Dual-Attention Proximal Policy Optimization</h3>
-        <p>Daud Khan, Sawera Aslam, and KyungHi Chang. Inha University Industry-Academic Cooperation Foundation, Korea Copyright Commission.</p>
-        <p><strong>Program No. C-2025-030562</strong> · <span class="status">Registered August 11, 2025</span></p>
-      </div>
-      <div class="card">
-        <h3>Roadside Unit-Based V2X Message Fusion and Actor-Critic Modeling for Autonomous Driving in Intersection Scenarios</h3>
-        <p>Sawera Aslam, Daud Khan, and KyungHi Chang. Inha University Industry-Academic Cooperation Foundation, Korea Copyright Commission.</p>
-        <p><strong>Program No. C-2025-029328</strong> · <span class="status">Registered August 1, 2025</span></p>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <h2>Technical Skills</h2>
-      <div class="interest-grid">
-        <div class="card"><h3>Programming</h3><p>Python (Advanced), MATLAB (Intermediate), C++ (Intermediate)</p></div>
-        <div class="card"><h3>Simulation &amp; Communication</h3><p>CARLA, SUMO, OMNeT++, Vienna 5G Simulator, 5G Toolbox (3GPP NR), NTN and satellite-communication tools</p></div>
-        <div class="card"><h3>AI &amp; Networking</h3><p>Reinforcement Learning Toolbox, AI-RAN frameworks, semantic-communication models, deep reinforcement learning</p></div>
-        <div class="card"><h3>Design &amp; Documentation</h3><p>Adobe Illustrator (Advanced), Adobe Photoshop (Advanced), LaTeX</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="awards">
-      <h2>Awards &amp; Honors</h2>
-      <div class="card"><strong>Marie Skłodowska-Curie Fellowship</strong> - ANCHOR project (Advanced Network Connectivity Using Harmonious Optical and Radio Technologies), Instituto de Telecomunicações</div>
-      <div class="card"><strong>Jungseok International Scholarship</strong> - Full tuition scholarship, Inha University, 2024-Present</div>
-      <div class="card"><strong>BK21 Scholarship</strong> - Korean Government-funded scholarship, 2024-Present</div>
-      <div class="card"><strong>Project-Funded Scholarship</strong> - Mobile Telecommunication Research Lab, Inha University, 2024-Present</div>
-      <div class="card"><strong>PEF Merit and Need-Based Scholarship</strong> - Professional Educational Foundation, 2018-2022</div>
-      <div class="card"><strong>Full Tuition &amp; Laptop Scholarship</strong> - The Orbit College, Thand Koi, 2016-2018</div>
-    </section>
-
-    <section class="section" id="professional">
-      <h2>Workshops &amp; Professional Activities</h2>
-      <div class="publication-grid">
-        <div class="card">
-          <h3>Workshops &amp; Training</h3>
-          <ul>
-            <li>Mobile Korea 2025 - Regional Workshop on AI-Empowered Networks, MSIT, Seoul, October 2025</li>
-            <li>Future Mobility Technology Workshop for the 6G Era, KICS, September 2024</li>
-            <li>Resume/CV Writing, Interviewing, Confidence Building, and Communication Skills Training, PEF, August 2023</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Memberships</h3>
-          <ul>
-            <li>Member, Korean Institute of Communications and Information Sciences, June 2024-Present</li>
-            <li>Pakistan Engineering Council Registered Engineer, No. ELECT/98427</li>
-            <li>Peer Reviewer, <em>IEEE Access</em> - 20 peer-review records for 15 manuscripts, February 2025-Present</li>
-          </ul>
-          <p><a href="pec-certificate.jpg" target="_blank" rel="noopener">View PEC registration certificate</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="activities">
-      <h2>Activities</h2>
-      <p class="lead">Research, academic, professional, and graduation activities.</p>
-      <div class="gallery">
-        <!-- Upload these JPG files beside index.html in your GitHub repository. -->
-        <figure><img src="activity-1.jpg" alt="Research and academic activity 1" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-2.jpg" alt="Research and academic activity 2" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure class="wide"><img src="activity-3.jpg" alt="Research and academic activity 3" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-5.jpg" alt="Research and academic activity 5" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-6.jpg" alt="Research and academic activity 6" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-7.jpg" alt="Research and academic activity 7" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure class="wide"><img src="activity-8.jpg" alt="Research and academic activity 8" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-9.jpg" alt="Research and academic activity 9" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure class="wide"><img src="activity-10.jpg" alt="Research and academic activity 10" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure class="wide"><img src="activity-11.jpg" alt="Research and academic activity 11" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-12.jpg" alt="Research and academic activity 12" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-13.jpg" alt="Research and academic activity 13" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-14.jpg" alt="Research and academic activity 14" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure><img src="activity-15.jpg" alt="Research and academic activity 15" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-        <figure class="wide"><img src="activity-16.jpg" alt="Research and academic activity 16" loading="lazy" onclick="openModal(this.src, this.alt)"><figcaption>Research and academic activity</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:daudkhanmrz@gmail.com">daudkhanmrz@gmail.com</a></p>
-      <p class="muted">For research collaboration, academic opportunities, or questions about my work, please contact me by email.</p>
-    </section>
+    <section class="section" id="contact"><div class="container"><div class="contact-box"><p class="kicker">Get in touch</p><h2>Let’s explore the next connection</h2><p>Open to research collaborations and academic opportunities in advanced wireless communication systems.</p><div class="contact-links"><a class="primary" href="mailto:daudkhanmrz@gmail.com">✉ Email Me</a><a href="https://github.com/Daudkhan99" target="_blank" rel="noopener">⌘ GitHub</a><a href="https://www.linkedin.com/in/daud-khan9478/" target="_blank" rel="noopener">in LinkedIn</a><a href="https://scholar.google.com/citations?user=1zD6lTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">◈ Scholar</a></div></div></div></section>
   </main>
 
-  <footer class="footer">© <span id="year"></span> Daud Khan · Academic Portfolio</footer>
-
-  <div id="imgModal" class="modal" role="dialog" aria-modal="true" aria-label="Expanded activity image" onclick="closeModal(event)">
-    <span class="close" onclick="closeModal(event)" aria-label="Close">&times;</span>
-    <img class="modal-content" id="modalImg" alt="">
-  </div>
+  <footer class="footer">© <span id="year"></span> Daud Khan · Research Portfolio</footer>
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Expanded activity image" onclick="closeModal(event)"><button class="modal-close" type="button" aria-label="Close image" onclick="closeModal(event)">×</button><img class="modal-content" id="modalImage" alt=""></div>
 
   <script>
-    const themeButton = document.querySelector('.toggle-btn');
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      themeButton.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      themeButton.textContent = '☀️';
-    }
-
-    function openModal(src, alt) {
-      const modal = document.getElementById('imgModal');
-      const image = document.getElementById('modalImg');
-      image.src = src;
-      image.alt = alt || 'Expanded image';
-      modal.style.display = 'block';
-    }
-
-    function closeModal(event) {
-      if (!event || event.target.id === 'imgModal' || event.target.classList.contains('close')) {
-        document.getElementById('imgModal').style.display = 'none';
-      }
-    }
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') document.getElementById('imgModal').style.display = 'none';
-    });
-
+    const themeButton = document.getElementById('themeButton');
+    function setTheme(isDark) { document.body.classList.toggle('dark', isDark); themeButton.textContent = isDark ? '☀️' : '🌙'; localStorage.setItem('theme', isDark ? 'dark' : 'light'); }
+    themeButton.addEventListener('click', () => setTheme(!document.body.classList.contains('dark')));
+    setTheme(localStorage.getItem('theme') === 'dark');
+    function toggleMenu(button) { const links = document.getElementById('navLinks'); const open = links.classList.toggle('open'); button.setAttribute('aria-expanded', open); }
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('open'); document.querySelector('.menu-button').setAttribute('aria-expanded', 'false'); }));
+    document.querySelectorAll('.tab-button').forEach(button => { button.addEventListener('click', () => { document.querySelectorAll('.tab-button').forEach(item => item.classList.remove('active')); document.querySelectorAll('.publication-panel').forEach(panel => panel.classList.remove('active')); button.classList.add('active'); document.getElementById(button.dataset.panel).classList.add('active'); }); });
+    function openModal(image) { const modal = document.getElementById('imageModal'); const modalImage = document.getElementById('modalImage'); modalImage.src = image.src; modalImage.alt = image.alt; modal.style.display = 'grid'; document.body.style.overflow = 'hidden'; }
+    function closeModal(event) { if (!event || event.target.id === 'imageModal' || event.target.classList.contains('modal-close')) { document.getElementById('imageModal').style.display = 'none'; document.body.style.overflow = ''; } }
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
