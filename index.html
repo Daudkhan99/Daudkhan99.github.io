@@ -104,20 +104,12 @@
     }
     .menu-button { display: none; }
 
-    .brand { display: inline-flex; align-items: center; gap: 11px; line-height: 1.15; white-space: nowrap; }
-    .brand small { display: block; margin-top: 3px; color: var(--muted); font-family: "Inter", sans-serif; font-size: .56rem; font-weight: 800; letter-spacing: .16em; }
-    .brand-mark { position: relative; width: 44px; height: 44px; display: grid; place-items: center; flex: none; color: #fff; background: linear-gradient(145deg, #063567, #188db5); border-radius: 12px; font-size: 1rem; font-weight: 800; letter-spacing: -.08em; box-shadow: 0 4px 14px rgba(8, 74, 126, .25); }
-    .brand-signal { position: absolute; width: 7px; height: 7px; top: 5px; right: 5px; border: 1.5px solid #92f4f5; border-radius: 50%; }
-
     /* Hero */
-    .hero { position: relative; background: linear-gradient(180deg, var(--white), var(--sky) 180%); }
-    .network-banner { position: relative; height: clamp(245px, 27vw, 330px); overflow: hidden; background: #051f43; }
-    .network-art { display: block; width: 100%; height: 100%; }
-    .banner-caption { position: absolute; right: max(30px, calc((100vw - 1180px)/2)); bottom: 24px; display: flex; align-items: center; gap: 11px; color: #f4fbff; font-size: clamp(.7rem, 1.1vw, .93rem); font-weight: 800; letter-spacing: .09em; text-shadow: 0 2px 10px #00172e; }
-    .caption-line { width: 30px; height: 2px; background: #5ee7f3; }
-    .caption-separator { color: #6eeaf1; }
-    .hero-grid { position: relative; display: grid; grid-template-columns: 300px minmax(0, 1fr); align-items: start; gap: 76px; padding-top: 44px; padding-bottom: 70px; }
-    .hero-content { min-width: 0; }
+    .hero { position: relative; overflow: hidden; padding: 92px 0 74px; background: linear-gradient(150deg, var(--white) 48%, var(--sky) 100%); }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero::before { width: 360px; height: 360px; right: -110px; top: -160px; background: rgba(46, 139, 184, .10); }
+    .hero::after { width: 170px; height: 170px; left: -80px; bottom: -70px; background: rgba(23, 109, 157, .08); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 340px; align-items: center; gap: 72px; }
     .hero-label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; color: var(--blue); background: var(--sky); border: 1px solid #b7d9e8; border-radius: 999px; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .hero-label::before { content: ""; width: 8px; height: 8px; background: var(--blue); border-radius: 50%; }
     h1 { margin: 20px 0 12px; font-size: clamp(3.4rem, 8vw, 6.6rem); letter-spacing: -.055em; line-height: .98; }
@@ -132,7 +124,7 @@
     .hero-socials { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 24px; }
     .hero-socials a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 9px; font-size: .88rem; font-weight: 700; text-decoration: none; transition: .2s; }
     .hero-socials a:hover { color: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
-    .hero-photo-wrap { position: relative; justify-self: center; margin-top: -168px; }
+    .hero-photo-wrap { position: relative; justify-self: center; }
     .hero-photo-wrap::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--blue); border-radius: 32px; opacity: .14; }
     .profile-photo { position: relative; width: 300px; height: 370px; object-fit: cover; object-position: top center; background: var(--sky); border: 8px solid var(--white); border-radius: 28px; box-shadow: var(--shadow); }
     .photo-badge { position: absolute; right: -28px; bottom: 28px; z-index: 2; max-width: 190px; padding: 13px 16px; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 13px; box-shadow: var(--shadow); font-size: .8rem; font-weight: 700; }
@@ -240,7 +232,7 @@
       .nav-links { display: none; position: absolute; top: 72px; left: 20px; right: 20px; padding: 12px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
       .nav-links.open { display: grid; }
       .menu-button { display: grid; }
-      .hero-grid { grid-template-columns: 260px minmax(0,1fr); gap: 42px; }
+      .hero-grid { grid-template-columns: 1fr 280px; gap: 42px; }
       .profile-photo { width: 250px; height: 320px; }
       .achievement-grid { grid-template-columns: repeat(3, 1fr); }
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -250,13 +242,11 @@
     @media (max-width: 720px) {
       .container { width: min(100% - 28px, 1180px); }
       .section { padding: 68px 0; }
-      .network-banner { height: 260px; }
-      .banner-caption { left: 18px; right: 18px; bottom: 17px; justify-content: center; text-align: center; line-height: 1.5; flex-wrap: wrap; gap: 4px; }
-      .caption-line { display: none; }
-      .hero-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; padding-top: 0; padding-bottom: 55px; }
+      .hero { padding: 65px 0 55px; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-copy { margin-inline: auto; }
       .status-row, .hero-socials { justify-content: center; }
-      .hero-photo-wrap { grid-row: 1; margin-top: -85px; }
+      .hero-photo-wrap { grid-row: 1; }
       .profile-photo { width: 220px; height: 270px; }
       .photo-badge { right: -18px; bottom: 16px; }
       .achievement-grid { grid-template-columns: repeat(2, 1fr); }
@@ -268,13 +258,34 @@
     }
 
     @media (max-width: 430px) {
-      .banner-caption { font-size: .65rem; letter-spacing: .03em; }
-      .brand small { font-size: .48rem; }
       h1 { font-size: 3.1rem; }
       .achievement-grid { grid-template-columns: 1fr; }
       .achievement-card { min-height: auto; }
       .topic { font-size: .76rem; }
     }
+
+    /* Portfolio monogram and Radio Stripes banner */
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-mark { position: relative; display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 11px; background: #002c69; color: #fff; font-size: 1rem; letter-spacing: -.08em; }
+    .brand-signal { position: absolute; top: 5px; right: 5px; width: 6px; height: 6px; border: 1.5px solid #72e4ef; border-radius: 50%; }
+    .hero { padding: 0 0 74px; background: linear-gradient(150deg, var(--white) 48%, var(--sky) 100%); }
+    .hero::before, .hero::after { display: none; }
+    .network-banner { position: relative; height: clamp(245px, 27vw, 330px); overflow: hidden; background: #001637; }
+    .network-art { display: block; width: 100%; height: 100%; }
+    .banner-caption { position: absolute; right: max(30px, calc((100vw - 1180px)/2)); bottom: 22px; display: flex; align-items: center; gap: 10px; color: #f4fbff; font-size: clamp(.7rem, 1.1vw, .92rem); font-weight: 800; letter-spacing: .08em; text-shadow: 0 2px 10px #001637; }
+    .caption-line { width: 30px; height: 2px; background: #5ee7f3; }
+    .caption-separator { color: #6eeaf1; }
+    .hero-grid { padding-top: 55px; }
+    .hero-photo-wrap { margin-top: -115px; }
+    @media (max-width: 720px) {
+      .network-banner { height: 260px; }
+      .banner-caption { left: 18px; right: 18px; bottom: 17px; justify-content: center; flex-wrap: wrap; gap: 4px; text-align: center; line-height: 1.5; }
+      .caption-line { display: none; }
+      .hero { padding: 0 0 55px; }
+      .hero-grid { padding-top: 45px; }
+      .hero-photo-wrap { margin-top: -95px; }
+    }
+    @media (max-width: 430px) { .banner-caption { font-size: .65rem; letter-spacing: .03em; } }
   </style>
 </head>
 
@@ -283,7 +294,7 @@
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="DA · Daud Khan home"><span class="brand-mark" aria-hidden="true">DA<span class="brand-signal"></span></span><span>Daud Khan<small>RESEARCH PORTFOLIO</small></span></a>
+      <a class="brand" href="#home" aria-label="DA · Daud Khan home"><span class="brand-mark" aria-hidden="true">DA<span class="brand-signal"></span></span><span>Daud Khan</span></a>
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#publications">Publications</a><a href="#intellectual-property">IP</a><a href="#awards">Awards</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
       </div>
@@ -296,7 +307,7 @@
       <svg class="network-art" viewBox="0 0 1200 390" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="network-title">
         <title id="network-title">Radio Stripes and distributed massive MIMO network</title>
         <defs>
-          <linearGradient id="banner-bg" x2="1" y2="1"><stop stop-color="#05152d"/><stop offset=".55" stop-color="#063369"/><stop offset="1" stop-color="#062247"/></linearGradient>
+          <linearGradient id="banner-bg" x2="1" y2="1"><stop stop-color="#001637"/><stop offset=".55" stop-color="#002c69"/><stop offset="1" stop-color="#063e83"/></linearGradient>
           <radialGradient id="banner-glow"><stop stop-color="#20d9ec" stop-opacity=".29"/><stop offset="1" stop-color="#20d9ec" stop-opacity="0"/></radialGradient>
           <filter id="node-glow"><feGaussianBlur stdDeviation="7"/></filter>
           <pattern id="dotgrid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#5bc8e9" opacity=".16"/></pattern>
@@ -324,8 +335,7 @@
       <div class="banner-caption"><span class="caption-line"></span>6G WIRELESS COMMUNICATION <span class="caption-separator">·</span> RADIO STRIPES <span class="caption-separator">·</span> CELL-FREE mMIMO</div>
     </div>
     <div class="container hero-grid">
-      <div class="hero-photo-wrap"><img class="profile-photo" src="profile.jpg" alt="Portrait of Daud Khan"><div class="photo-badge"><strong>ANCHOR · DC 2.1</strong>Radio Stripes + mMIMO</div></div>
-      <div class="hero-content">
+      <div>
         <span class="hero-label">Marie Skłodowska-Curie Fellow</span>
         <h1>Daud <span>Khan</span></h1>
         <p class="hero-title">PhD Researcher in Electrical Engineering</p>
@@ -333,6 +343,7 @@
         <div class="status-row"><span class="status-pill green"><span class="status-dot"></span>Open to Research Collaborations</span><span class="status-pill blue">✦ Horizon Europe MSCA Doctoral Network</span></div>
         <div class="hero-socials"><a href="mailto:daudkhanmrz@gmail.com">✉ Email</a><a href="https://www.linkedin.com/in/daud-khan9478/" target="_blank" rel="noopener">in LinkedIn</a><a href="https://scholar.google.com/citations?user=1zD6lTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">◈ Google Scholar</a><a href="https://github.com/Daudkhan99" target="_blank" rel="noopener">⌘ GitHub</a></div>
       </div>
+      <div class="hero-photo-wrap"><img class="profile-photo" src="profile.jpg" alt="Portrait of Daud Khan"><div class="photo-badge"><strong>ANCHOR · DC 2.1</strong>RS mMIMO</div></div>
     </div>
   </header>
 
